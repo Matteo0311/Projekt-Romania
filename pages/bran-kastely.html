@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bran-Kastély</title>
+    <link rel="stylesheet" href="/Assets/css/bran-kastely.css">
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<style>
+    #BranHeader {
+  color: white !important;
+  text-align: center;
+  width: 100%;
+  height: 400px;
+  background-image: url('/Assets/img/header/gfdfg.jpg');
+  background-color: #212121 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.cim {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: #3b2e2a;
+  border-left: 4px solid #8e2424;
+  padding-left: 1rem;
+  text-shadow: 1px 1px 0 #eee;
+}
+
+/* Beágyazott alcímek kisebbek */
+.cim + .cim {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  border-color: #b64545;
+}
+
+/* Leírások – lágy, barátságos tipó, jó olvashatóság */
+.leiras {
+  font-family: 'Merriweather', serif;
+  font-size: 1.05rem;
+  color: #444;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+/* Listák stílusa – turisztikai tippekre fókuszálva */
+.leiras li {
+  margin-bottom: 0.75rem;
+  padding-left: 0.5rem;
+  position: relative;
+}
+
+.leiras li::before {
+  content: "🧭";
+  position: absolute;
+  left: -1.2rem;
+  top: 0.1rem;
+}
+
+/* Képek – kerekített és középre igazított, már jó Bootstrap class van, csak finomítunk */
+.img-fluid {
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.img-fluid:hover {
+  transform: scale(1.015);
+}
+
+/* Mobilon is szuper: betűméretek finoman alkalmazkodnak */
+@media (max-width: 768px) {
+  .cim {
+    font-size: 1.6rem;
+  }
+
+  .leiras {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .cim {
+    font-size: 1.2rem;
+    padding-left: 0.5rem;
+  }
+
+  .leiras {
+    font-size: 0.9rem;
+  }
+
+  .img-fluid {
+    box-shadow: none;
+  }
+}
+</style>
+<body>
+    <div id="navbarIde"></div>
+    <div id="BranHeader">
+        <h1 class="headerszoveg">Bran-Kastély</h1>
+    </div>
+    <div class="container mt-5">
+        <h2 class="cim">A Kastély Története:</h2>
+        <p class="leiras">A Bran-kastély, más néven Drakula-kastély, Románia egyik legismertebb turisztikai látványossága. A kastély a Kárpátok hegyei között található, pontosabban a Bran-szorosban, és híres a Vlad Tepeshez, vagyis Drakulához fűződő legendáiról. A hegyek között fekvő erődítmény úgy néz ki, mintha egy meséből lépett volna elő, és bár egyesek szerint Vlad nem is tartózkodott itt soha, a kastély körüli misztikum és történet mindenképpen különlegessé teszi.</p>
+        
+        <img src="/Assets/img/header/castelul-bran-viziteaza-1.jpg" alt="Bran Castle" class="img-fluid rounded mx-auto d-block mb-4">
+        
+        <p class="leiras">A kastély építése a 14. század végén kezdődött, és a célja elsődlegesen védelmi jellegű volt. Az erődöt a magyar királyi család rendelte el, hogy megvédje a fontos kereskedelmi útvonalat, és hogy felügyelje a Havasalföld és Erdély közötti határokat. A Bran-kastély évszázadokig katonai erődként szolgált, és éppen ezért sziklaszilárd falai és védelmi rendszere a mai napig lenyűgözőek.</p>
+        
+        <p class="leiras">Az épület történetének másik érdekes része, hogy a 19. században a kastély a román királyi család birtokába került, és 1920-ban a királyi család egyik tagja, I. Miklós román király is lakott itt. Azonban az igazán világhírt a kastélynak a 20. század elején kezdődött Drakula-kultusz hozta. Az írót, Bram Stoker-t egyetlen mondatban sem említi a kastélyról, de a regényének köszönhetően a kastély a világ számos vámpír-rajongó számára vált az egyik legismertebb „Drakula” helyszínné.</p>
+        
+        <p class="leiras">Ma a Bran-kastély múzeumként működik, amely lehetőséget ad arra, hogy a látogatók betekintést nyerjenek a kastély történetébe, annak építkezésébe és a híres Vlad Tepes életébe. Az itt található kiállítások révén megismerkedhetünk a középkori élet és kultúra részleteivel, miközben a Drakula-legendákat és a hozzájuk kapcsolódó titkokat is felfedezhetjük. Az egész kastély a legendák és a történelem varázslatos keverékét nyújtja a látogatóknak.</p>
+        
+        <h3 class="cim">Bran-kastély és Drakula: A Képzelet és Történelem Határán</h3>
+        <p class="leiras">A Bran-kastély és Vlad Tepes legendája összefonódik, és bár sok részletet csak a képzelet szőtt meg, a kastély valóban megtestesíti a félelmetes uralkodót, akitől a híres Drakula-vámpír figurája származik. Vlad Tepes, más néven Vlad a Pokol, a történelem egyik legismertebb és legfélelmetesebb alakja volt, aki a 15. században uralkodott Havasalföldön. A kegyetlen uralkodó híre sokáig élt a népi történetekben, és az ő életéből nőtte ki magát a mai vámpírtörténet. A kastély falai között a legendák szerint Vlad is tartózkodott, és ezért a történetmesélők és a filmek is gyakran társítják őt a kastéllyal.</p>
+        
+        <h3 class="cim">Mit Tartsunk szem előtt, amikor Látogatunk?</h3>
+        <p class="leiras">Ha valaha is Romániába látogatsz, a Bran-kastély mindenképpen a „muszáj meglátogatni” listád elején kell álljon. A kastély egyedülálló panorámát nyújt a Kárpátok hegyvonulataira, miközben a történelem és a misztikum egyaránt megnyilvánul minden egyes szegletében. Ne hagyd ki a lehetőséget, hogy végigjárd a kastély belső tereit, beleértve a titkos folyosókat és szűk lépcsőket, amelyek egy-egy pillanatra mintha egy másik időbe repítenének el.</p>
+        
+        <p class="leiras">Ha szerencséd van, akkor a helyi rendezvények egyikén is részt vehetsz, ahol Drakula-jelmezes felvonulások és egyéb izgalmas események szórakoztatják a látogatókat. És persze, ne felejts el egy „Drakula-koktél”-t rendelni a kastély kávézójában, hogy a látogatás teljes élmény legyen!</p>
+        
+        <h3 class="cim">Hasznos Tippek a Bran-kastély Látogatásához</h3>
+        <ul class="leiras">
+          <li><strong>Nyitvatartás:</strong> A kastély egész évben nyitva tart, de a legjobb időpontok a tavaszi és őszi hónapok, amikor elkerülheted a nyári turisták tömegét.</li>
+          <li><strong>Jegyek:</strong> Érdemes előre online jegyet vásárolni, hogy elkerüld a hosszú sorokat.</li>
+          <li><strong>Parkolás:</strong> A kastély környékén parkolóhelyek találhatók, de a parkolás ára az évszaktól függően változhat, így számíts rá, hogy a téli hónapok kedvezőbbek ebben a tekintetben.</li>
+          <li><strong>Látogatási idő:</strong> Az átlagos látogatási idő körülbelül 2-3 óra. Ne siess, szánj elég időt a részletes felfedezésre!</li>
+        </ul>
+        
+        <h3 class="cim">A környék felfedezése</h3>
+        <p class="leiras">A Bran-kastély látogatása után ne hagyd ki a környék felfedezését sem! A közeli Rasnov vára, a Peles-kastély és a gyönyörű Poiana Brașov üdülőhelyek mind egy karnyújtásnyira találhatók, és mindegyikük egy-egy új élményt kínál. Ha szeretnél egy kis túrázást is beiktatni, a Kárpátok számos szép túraútvonala vár rád, amelyek a természet szépségét és a nyugalmat kínálják a város zajától távol.</p>
+        
+        <h3 class="cim">Szálláslehetőségek a Bran környékén</h3>
+        <p class="leiras">Ha több napra tervezed a látogatásodat, a Bran környéke számos kényelmes szálláslehetőséget kínál. A helyi panziók és szállodák, valamint a közeli hegyvidéki üdülőhelyek ideálisak a pihenéshez, és tökéletes kiindulópontot adnak a környék felfedezéséhez. Ha igazán romantikus élményre vágysz, válassz egy hegyi kabint, ahonnan lenyűgöző kilátás nyílik a Bran-szorosra és a Kárpátok csúcsaira.</p>
+        
+        <h3 class="cim">Következtetés</h3>
+        <p class="leiras">Románia ezen különleges helyszíne a történelem és a fantázia egyvelege, egy olyan élményt kínál, amelyet biztosan nem fogsz elfelejteni. Akár a történelem iránt érdeklődsz, akár a misztikus Drakula-legendák miatt látogatsz el ide, a Bran-kastély mindenki számára egyedülálló élményt nyújt. Ha Romániában jársz, ne hagyd ki, mert itt a múlt és a jelen találkozik egy olyan varázslatos helyen, ami örökre megmarad az emlékezetedben.</p>
+        
+        <h2 class="cim">Számomra a Bran-kastély: Egy Mágikus Élmény</h2>
+        <p class="leiras">Amikor először hallottam a Bran-kastélyról, egy egyszerű turistaként érkeztem, aki csak kíváncsi volt, hogy mitől olyan híres ez a hely. Azonban miután beléptem a kastély kapuján, valami egészen különleges élményben volt részem. Egy olyan érzés fogott el, mintha átléptem volna egy másik világba. Az idő megállt, és a történelem elkezdett körülvenni, mintha maga Vlad Tepes lépett volna ki a falak közül, hogy üdvözöljön engem.</p>
+        
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Bran_Castle%2C_Romania.jpg/800px-Bran_Castle%2C_Roman_Castle.jpg" alt="Bran Castle Experience" class="img-fluid rounded mx-auto d-block mb-4">
+        
+        <p class="leiras">A kastély belső tere különleges atmoszférát árasztott. A sötét, festett falak, az öreg tölgyfa bútorok, és a különféle műalkotások mind azt a középkori életérzést adták vissza, amelyre Románia ebben a régiójában mindig is büszke volt. Sétálva a szűk folyosókon, az ember szinte érezte a történelem súlyát, miközben a kastély története egyre inkább a fantáziám részévé vált. De nemcsak a kastély falai mesélnek, hanem a levegő is tele van a legendák titokzatos leheletével, mintha a történelem szellemét szinte tapintani lehetne.</p>
+        
+        <h3 class="cim">Drámai Pillanatok és Képzelet</h3>
+        <p class="leiras">Egyik kedvenc pillanatom a kastély híres „Drakula-terme” volt. Bár a legenda szerint Vlad Tepes soha nem lakott itt, és Bram Stoker regénye is egy fiktív ábrázolás, az atmoszféra mégis magával ragadó. Először nem is hittem el, hogy ilyen erős hatással lesz rám a hely, de ahogy elmélyedtem a történelemben és a legendákban, szinte hallani lehetett a csatazajt és látni a sötét árnyakat a kastély tornyain. Úgy éreztem magam, mint egy történet szereplője, akit a történelem és a monda egyszerre ragad el.</p>
+        
+        <p class="leiras">Miután bejártam a kastély minden zegzugát, kimerülve, de elégedetten indultam el a környék felfedezésére. A Bran környéke varázslatos, és egyszerűen nem hagyhattam ki. A helyi éttermekben ínycsiklandó helyi ételeket kóstoltam, és még egy finom, meleg „Tuica” (román szilvapálinka) is a kezembe került, amitől a fáradtságom azonnal elillant. A helyiek kedvessége és vendégszeretete még tovább fokozta az élményt.</p>
+        
+        <h3 class="cim">Szállás és Pihenés</h3>
+        <p class="leiras">Miután felfedeztem a kastélyt, a szállásom egy helyi hegyi panzióban volt, és csak arra tudtam gondolni, hogy milyen csodálatos este vár rám. A szállás igazi hegyi menedék volt, ahol elfelejthettem a világ zaját, és csupán a természet hangjaival, valamint a nyugalommal kellett szembenéznem. A reggeli napfényben a panzió teraszáról láthattam a Bran-szoros völgyét és a Kárpátok csúcsait, amelyek egyszerűen lenyűgözőek voltak. Ott, a hegyek között, azt éreztem, hogy a világ összes problémája eltörpül a természeti szépség mellett.</p>
+        
+        <p class="leiras">Ez a látogatás örökre megmaradt bennem, és minden alkalommal, amikor a Bran-kastélyról beszélek, egy kis mosoly ül az arcomra. Az élmény minden egyes pillanata egy-egy emlék, amelyet nem lehet elfelejteni, és mindenképp ajánlom mindenkinek, aki Romániába látogat.</p>
+        
+        
+                
+
+    </div>
+    <div id="footerIde"></div>
+
+        <script src="/Assets/JS/scriptLoader.js"></script>
+
+
+
+    
+</body>
+</html>

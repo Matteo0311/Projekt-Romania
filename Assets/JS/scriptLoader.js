@@ -1,7 +1,7 @@
 const scriptsToLoad = [
-    'Assets/js/navbarLoader.js',    
-    'Assets/js/data.js',    
-    'Assets/js/varosbemutatoData.js',    
+    '/Assets/js/navbarLoader.js',
+    '/Assets/js/data.js',
+    '/Assets/js/varosbemutatoData.js',
 ];
 
 function loadScripts(scriptList) {
