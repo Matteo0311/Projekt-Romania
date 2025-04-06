@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gasztronómia | Románia</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+</head>
+<style>
+
+.ettermekGomb {
+    flex: 0 1 calc(20% - 20px);
+    background-color: black;
+    border: 2px solid black;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    min-width: 150px;
+    max-width: 200px;
+    margin-bottom: 20px; 
+}
+
+.ettermekGomb:hover {
+    transform: translateY(-5px);
+    background-color: #111;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); 
+}
+.ettermekGomb a {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-decoration: none;
+    color: white;
+    font-family: 'Times New Roman', Times, serif; 
+}
+
+.etteremNev {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-bottom: 1px solid #333;
+    padding-bottom: 8px;
+    min-height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.etteremLeiras {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    color: #ddd;
+    font-family: 'Times New Roman', Times, serif; 
+}
+
+.etteremHelyee {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-top: 1px solid #333;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    margin-top: auto;
+    font-size: 0.85em;
+    font-family: 'Times New Roman', Times, serif; 
+}
+.ertekeles-ikon {
+    margin-right: 5px;
+    color: inherit;
+    font-size: inherit;
+}
+#etteremErtekeles {
+    color: gold;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif; 
+}
+
+.ettermekGomb {
+    flex: 0 1 calc(20% - 20px);
+    background-color: black;
+    border: 2px solid black;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    min-width: 150px;
+    max-width: 200px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+</style>
+<body>
+    <div id="navbarIde"></div>
+    <div id="headerAloldal">
+        <div class="container-fluid text-center">
+            <h1>Románia Gasztronómiája</h1>
+            <p>Fedezd fel Románia ízletes ételeit és hagyományait!</p>
+            <hr>
+        </div>
+    </div>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+                <h2>Román-Magyar gasztronómiai összefonódás</h2>
+                <p class="Fooldalleiras">A román gasztronómia sokszínűsége a különféle történelmi korszakok és kulturális hatások eredményeként alakult ki. Ez a gazdag konyha számos olyan ételt kínál, amely nemcsak a helyiek körében népszerű, hanem a szomszédos magyar konyhára is hatással volt.</p> <p class="Fooldalleiras">A két nemzet gasztronómiája szoros kapcsolatban áll egymással – a közös múlt és a földrajzi közelség révén számos hasonló étel és ízvilág alakult ki. Nem véletlen, hogy sok fogás ismerősen cseng mindkét kultúrában.</p> <p class="Fooldalleiras">Hasonlóságot mutatnak például a húsételek, a gazdag levesek és a tartalmas tésztafogások iránti szeretetben. Ugyanakkor akadnak különbségek is: míg a románok előszeretettel használják a kukoricadarát (pl. puliszka formájában), a magyar konyha inkább a burgonyát és a különféle tésztákat részesíti előnyben.</p>
+                <table class="table table-bordered">
+                    <tr class="table-primary text-center">
+                        <th>Étel neve</th>
+                        <th>Leírás</th>
+                        <th>Hozzávalók</th>
+                        <th>Elkészítési mód</th>
+                        <th>Fogyasztás módja</th>
+                        <th>Kép</th>
+                    </tr>
+                    <tr>
+                        <td>Sarmale</td>
+                        <td>Töltött káposzta, amelyet savanyú káposztalevélbe csomagolt darált hús és rizs töltelék jellemez.</td>
+                        <td>Darált hús, rizs, savanyú káposzta, fűszerek</td>
+                        <td>A tölteléket elkészítjük, majd a káposztalevelekbe csomagoljuk és főzzük.</td>
+                        <td>Főételként tálalják, gyakran tejföllel.</td>
+                        <td><img src="assets/images/sarmale.jpg" alt="Sarmale" width="100"></td>
+                    </tr>
+                    <tr>
+                        <td>Mămăligă</td>
+                        <td>Kukoricadara alapú étel, amely a román konyha egyik alapköve.</td>
+                        <td>Kukoricadara, víz, só</td>
+                        <td>A kukoricadarát vízben főzzük, amíg sűrű péppé válik.</td>
+                        <td>Főételként vagy köretként tálalják, gyakran tejföllel és sajttal.</td>
+                        <td><img src="assets/images/mamaliga.jpg" alt="Mămăligă" width="100"></td>
+                    </tr>
+                    <tr>
+                        <td>Papanasi</td>
+                        <td>Édes túrós fánk, amelyet lekvárral és tejföllel tálalnak.</td>
+                        <td>Túró, tojás, liszt, cukor, lekvár</td>
+                        <td>A hozzávalókat összegyúrjuk, formázzuk és sütjük.</td>
+                        <td>Deszertként tálalják, gyakran lekvárral és tejföllel.</td>
+                        <td><img src="assets/images/papanasi.jpg" alt="Papanasi" width="100"></td>
+                    </tr>
+                    <tr>
+                        <td>Ciorbă</td>
+                        <td>Savanyú levesek, amelyek különböző húsokkal és zöldségekkel készülnek.</td>
+                        <td>Hús, zöldségek, savanyú káposzta, fűszerek</td>
+                        <td>A hozzávalókat főzzük, majd savanyítjuk citromlével vagy ecettel.</td>
+                        <td>Levesként tálalják, gyakran tejföllel.</td>
+                        <td><img src="assets/images/ciorba.jpg" alt="Ciorbă" width="100"></td>
+                    </tr>
+                    <tr>
+                        <td>Coaste de porc</td>
+                        <td>Füstölt sertéshús, amelyet gyakran grilleznek vagy sütnek.</td>
+                        <td>Sertéshús, fűszerek</td>
+                        <td>A húst fűszerezzük és sütjük vagy grillezzük.</td>
+                        <td>Főételként tálalják, gyakran körettel.</td>
+                        <td><img src="assets/images/coaste.jpg" alt="Coaste de porc" width="100"></td>
+                    </tr>
+                </table>
+                <hr>
+                <h2>Román borok és italok</h2>
+                <p class="Fooldalleiras">A román borászat gazdag hagyományokkal rendelkezik, és számos kiváló minőségű bort kínál. A legismertebb borvidékek közé tartozik a <strong>Dealu Mare</strong>, a <strong>Târnave</strong> és a <strong>Moldova</strong>. A román borok között megtalálhatók a fehér, vörös és rozé borok is, amelyek különböző szőlőfajtákból készülnek.</p>
+                <p class="Fooldalleiras">A román borok közül kiemelkednek a <strong>Fetească Neagră</strong> (vörösbor), a <strong>Fetească Albă</strong> (fehérbor) és a <strong>Tămâioasă Românească</strong> (édes fehérbor). A román borok mellett népszerűek a helyi pálinkák is, amelyek gyümölcsökből készülnek, például szilvából vagy körteből.</p>
+                <p class="Fooldalleiras">A román gasztronómia és borászat szorosan összefonódik, és a helyi ételekhez gyakran ajánlanak borokat, amelyek kiemelik az ízeket és fokozzák az étkezési élményt.</p>
+                <h3>Ezt isszák Romániában legtöbbször:</h3>
+                <table class="table table-bordered">
+                    <tr class="table-primary text-center">
+                        <th>Ital neve</th>
+                        <th>Leírás</th>
+                        <th>Hozzávalók</th>
+                        <th>Elkészítési mód</th>
+                        <th>Fogyasztás módja</th>
+                        <th>Kép</th>
+                    </tr>
+                    <tr>
+                        <td>Tuica</td>
+                        <td>Hagyományos román pálinka, amely gyümölcsökből készül, leggyakrabban szilvából.</td>
+                        <td>Szilva, cukor, élesztő</td>
+                        <td>A gyümölcsöt erjesztik és lepárolják.</td>
+                        <td>Fogyasztás előtt hűtve vagy szobahőmérsékleten.</td>
+                        <td><img src="assets/images/tuica.jpg" alt="Tuica" width="100"></td>
+                    </tr>
+                    <tr>
+                        <td>Palinca</td>
+                        <td>Erősebb pálinka, amely különböző gyümölcsökből készül, például körtéből vagy almából.</td>
+                        <td>Körte, alma, cukor, élesztő</td>
+                        <td>A gyümölcsöt erjesztik és lepárolják.</td>
+                        <td>Fogyasztás előtt hűtve vagy szobahőmérsékleten.</td>
+                        <td><img src="assets/images/palinca.jpg" alt="Palinca" width="100"></td>
+                    </tr>
+                    <tr>
+                        <td>Vin fiert</td>
+                        <td>Forralt bor, amely fűszerekkel és gyümölcsökkel készül.</td>
+                        <td>Vörösbor, fahéj, szegfűszeg, narancs</td>
+                        <td>A bort felforralják a fűszerekkel és gyümölcsökkel.</td>
+                        <td>Melegen tálalják, télen népszerű ital.</td>
+                        <td><img src="assets/images/vin_fiert.jpg" alt="Vin fiert" width="100"></td>
+                    </tr>
+                    <tr>
+                        <td>Țuică fiartă</td>
+                        <td>Forralt pálinka, amely fűszerekkel és mézzel készül.</td>
+                        <td>Pálinka, méz, fahéj</td>
+                        <td>A pálinkát felforralják a fűszerekkel és mézzel.</td>
+                        <td>Melegen tálalják, télen népszerű ital.</td>
+                        <td><img src="assets/images/tuica_fiarta.jpg" alt="Țuică fiartă" width="100"></td>
+                    </tr>
+                    <tr>
+                        <td>Bere</td>
+                        <td>Román sör, amely különböző ízekben és típusokban kapható.</td>
+                        <td>Víz, árpa, komló, élesztő</td>
+                        <td>A hozzávalókat erjesztik és érlelik.</td>
+                        <td>Hidegen tálalják, étkezésekhez vagy szórakozáshoz.</td>
+                        <td><img src="assets/images/romania_beer.jpg" alt="Bere" width="100"></td>
+                    </tr>
+                    <tr>
+                        <td>Vin alb</td>
+                        <td>Fehérbor, amely különböző szőlőfajtákból készül.</td>
+                        <td>Szőlő, élesztő</td>
+                        <td>A szőlőt erjesztik és érlelik.</td>
+                        <td>Hidegen tálalják, étkezésekhez vagy aperitifként.</td>
+                        <td><img src="assets/images/white_wine.jpg" alt="Vin alb" width="100"></td>
+                    </tr>
+                    <tr>
+                        <td>Vin roșu</td>
+                        <td>Vörösbor, amely különböző szőlőfajtákból készül.</td>
+                        <td>Szőlő, élesztő</td>
+                        <td>A szőlőt erjesztik és érlelik.</td>
+                        <td>Hidegen tálalják, étkezésekhez vagy aperitifként.</td>
+                        <td><img src="assets/images/red_wine.jpg" alt="Vin roșu" width="100"></td>
+                    </tr>
+                    <tr>
+                        <td>Vin rozé</td>
+                        <td>Rozébor, amely vörös és fehér szőlőfajták keverékéből készül.</td>
+                        <td>Szőlő, élesztő</td>
+                        <td>A szőlőt erjesztik és érlelik.</td>
+                        <td>Hidegen tálalják, étkezésekhez vagy aperitifként.</td>
+                        <td><img src="assets/images/rose_wine.jpg" alt="Vin rozé" width="100"></td>
+                    </tr>
+
+                </table>
+                <hr>
+                <h2>Román Desszertek</h2>
+                <p class="Fooldalleiras">A román desszertek sokszínűsége és gazdagsága a helyi hagyományok és kultúrák keveredésének eredménye. Az alábbiakban bemutatunk néhány jellegzetes román desszertet, amelyek a helyi ízeket és hagyományokat tükrözik.</p>
+                <p class="Fooldalleiras">A román desszertek közé tartozik a <strong>Papanasi</strong>, amely egy édes túrós fánk, gyakran lekvárral és tejföllel tálalva. A <strong>Cozonac</strong> egy hagyományos ünnepi kalács, amely dióval vagy mákkal töltött. A <strong>Placinta</strong> pedig egy édes vagy sós töltelékkel készült rétes, amely különböző gyümölcsökkel vagy zöldségekkel készül.</p>
+                <p class="Fooldalleiras">A román desszertek közül kiemelkedik a <strong>Fursecuri</strong>, amely különböző ízekben és formákban készül, és gyakran ünnepi alkalmakra készítik. A <strong>Gogosi</strong> egy édes fánk, amelyet cukorral szórnak meg, és különböző töltelékekkel kínálnak.</p>
+                
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Édesség neve</th>
+                        <th>Származási országa:</th>
+                        <th>Leírás</th>
+                        <th>Hozzávalók</th>
+                        <th>Elkészítési mód</th>
+                        <th>Fogyasztás módja</th>
+                        <th>Kép</th>
+                    </tr>
+                    <tr>
+                        <td>Papanasi</td>
+                        <td>Románia</td>
+                        <td>Édes túrós fánk, amelyet lekvárral és tejföllel tálalnak.</td>
+                        <td>Túró, tojás, liszt, cukor, lekvár</td>
+                        <td>A hozzávalókat összegyúrjuk, formázzuk és sütjük.</td>
+                        <td>Deszertként tálalják, gyakran lekvárral és tejföllel.</td>
+                        <td><img src="assets/images/papanasi.jpg" alt="Papanasi" width="100"></td>
+                    </tr>
+                    <tr>
+                        <td>Cozonac</td>
+                        <td>Románia</td>
+                        <td>Hagyományos ünnepi kalács, amely dióval vagy mákkal töltött.</td>
+                        <td>Liszt, tojás, cukor, dió, mák</td>
+                        <td>A hozzávalókat összegyúrjuk, formázzuk és sütjük.</td>
+                        <td>Ünnepi alkalmakra tálalják.</td>
+                        <td><img src="assets/images/cozonac.jpg" alt="Cozonac" width="100"></td>
+                    </tr>
+                    <tr>
+                        <td>Placinta</td>
+                        <td>Románia</td>
+                        <td>Édes vagy sós töltelékkel készült rétes, különböző gyümölcsökkel vagy zöldségekkel.</td>
+                        <td>Liszt, tojás, gyümölcsök, zöldségek</td>
+                        <td>A hozzávalókat összegyúrjuk, formázzuk és sütjük.</td>
+                        <td>Főételként vagy desszertként tálalják.</td>
+                        <td><img src="assets/images/placinta.jpg" alt="Placinta" width="100"></td>
+                    </tr>
+                    <tr>
+                        <td>Fursecuri</td>
+                        <td>Románia</td>
+                        <td>Különböző ízekben és formákban készül, gyakran ünnepi alkalmakra készítik.</td>
+                        <td>Liszt, tojás, cukor, vaj</td>
+                        <td>A hozzávalókat összegyúrjuk, formázzuk és sütjük.</td>
+                        <td>Deszertként tálalják.</td>
+                        <td><img src="assets/images/fursecuri.jpg" alt="Fursecuri" width="100"></td>
+                    </tr>
+                    <tr>
+                        <td>Gogosi</td>
+                        <td>Románia</td>
+                        <td>Édes fánk, amelyet cukorral szórnak meg, és különböző töltelékekkel kínálnak.</td>
+                        <td>Liszt, tojás, cukor, élesztő</td>
+                        <td>A hozzávalókat összegyúrjuk, formázzuk és sütjük.</td>
+                        <td>Deszertként tálalják.</td>
+                        <td><img src="assets/images/gogosi.jpg" alt="Gogosi" width="100"></td>
+                    </tr>
+                    <tr>
+                        <td>Clătite</td>
+                        <td>Románia</td>
+                        <td>Hasonló a palacsintához, különböző töltelékekkel készül.</td>
+                        <td>Liszt, tojás, tej, cukor</td>
+                        <td>A hozzávalókat összegyúrjuk, sütjük és töltjük.</td>
+                        <td>Deszertként vagy főételként tálalják.</td>
+                        <td><img src="assets/images/clatite.jpg" alt="Clătite" width="100"></td>
+                    </tr>
+
+
+                </table>
+                <hr>
+                <h2>A Román Nép Gasztronómiája</h2>
+                <p class="Fooldalleiras">A román népi gasztronómia gazdag hagyományokkal és ízekkel rendelkezik, amelyek a vidéki közösségek életét tükrözik. Az alábbiakban bemutatunk néhány jellegzetes román népi ételt és italokat, amelyek a helyi kultúrák és hagyományok részei.</p>
+                <hr>
+                <h3>Legismertebb, legjobb értékeléssel rendelkezők éttermek listája</h3>
+                <div id="gombHelye">
+                    <div class="ettermekGomb" class="animate__animated animate__fadeInUp">
+                        <a href="history.html">
+                          <h2 class="etteremNev">Restaurant Casa Romaneasca</h2>
+                          <p class="etteremLeiras">Hagyományos román ételek és helyi specialitások. Autentikus ízek és barátságos légkör.</p>
+                          <p class="etteremHelyee">Bukarest <span id="etteremErtekeles"><i class="fas fa-star ertekeles-ikon"></i>4.5/5</span></p>
+                        </a>
+                      </div>
+
+                      <div class="ettermekGomb">
+                        <a href="history.html">
+                          <h2 class="etteremNev">Restaurant La Mama</h2>
+                          <p class="etteremLeiras">Román konyha és helyi borok széles választéka. Kiváló kiszolgálás és hangulatos környezet.</p>
+                          <p class="etteremHelyee">Kolozsvár <span id="etteremErtekeles"><i class="fas fa-star ertekeles-ikon"></i>4.7/5</span></p>
+                        </a>
+                      </div>
+
+                      <div class="ettermekGomb">
+                        <a href="history.html">
+                            <h2 class="etteremNev">Baracca</h2>
+                            <p class="etteremLeiras">Modern, egészségtudatos ételek friss, szezonális alapanyagokból. Egészséges és ízletes fogások elegáns környezetben.</p>
+                            <p class="etteremHelyee">Kolozsvár <span id="etteremErtekeles"><i class="fas fa-star ertekeles-ikon"></i>4.8/5</span></p>
+                        </a>
+                    </div>
+                    
+                    <div class="ettermekGomb">
+                        <a href="history.html">
+                            <h2 class="etteremNev">The Artist</h2>
+                            <p class="etteremLeiras">Innovatív, művészi tálalású ételek kifinomult környezetben. Lenyűgöző gasztronómiai élmény és kreatív menü.</p>
+                            <p class="etteremHelyee">Bukarest <span id="etteremErtekeles"><i class="fas fa-star ertekeles-ikon"></i>4.9/5</span></p>
+                        </a>
+                    </div>
+                    
+                    <div class="ettermekGomb">
+                        <a href="history.html">
+                            <h2 class="etteremNev">KAIAMO</h2>
+                            <p class="etteremLeiras">Hagyományos román ízek modern megközelítésben, szezonális alapanyagokból. Autentikus élmény és egyedi ételkombinációk.</p>
+                            <p class="etteremHelyee">Bukarest <span id="etteremErtekeles"><i class="fas fa-star ertekeles-ikon"></i>4.7/5</span></p>
+                        </a>
+                    </div>
+                    
+                    <div class="ettermekGomb">
+                        <a href="history.html">
+                            <h2 class="etteremNev">L’Atelier Relais & Chateaux</h2>
+                            <p class="etteremLeiras">Francia és balkáni konyha elegáns tálalásban. Kifinomult ízek és exkluzív környezet.</p>
+                            <p class="etteremHelyee">Bukarest <span id="etteremErtekeles"><i class="fas fa-star ertekeles-ikon"></i>4.8/5</span></p>
+                        </a>
+                    </div>
+                    
+                    <div class="ettermekGomb">
+                        <a href="history.html">
+                            <h2 class="etteremNev">Bistro de l’Arte</h2>
+                            <p class="etteremLeiras">Hagyományos román ételek modern csavarral, művészi környezetben. Kulturális élmény és ízletes fogások.</p>
+                            <p class="etteremHelyee">Brassó <span id="etteremErtekeles"><i class="fas fa-star ertekeles-ikon"></i>4.6/5</span></p>
+                        </a>
+                    </div>
+                    
+                    <div class="ettermekGomb">
+                        <a href="history.html">
+                            <h2 class="etteremNev">Privo</h2>
+                            <p class="etteremLeiras">Nemzetközi és román konyha fúziója, modern környezetben. Széles borválaszték és kifinomult menü.</p>
+                            <p class="etteremHelyee">Marosvárárhely <span id="etteremErtekeles"><i class="fas fa-star ertekeles-ikon"></i>4.7/5</span></p>
+                        </a>
+                    </div>
+                    
+                    <div class="ettermekGomb">
+                        <a href="history.html">
+                            <h2 class="etteremNev">Caru' cu Bere</h2>
+                            <p class="etteremLeiras">Bukarest legrégebbi sörözője, hagyományos román ételekkel. Történelmi hangulat és autentikus fogások.</p>
+                            <p class="etteremHelyee">Bukarest <span id="etteremErtekeles"><i class="fas fa-star ertekeles-ikon"></i>4.5/5</span></p>
+                        </a>
+                    </div>
+                    
+                    <div class="ettermekGomb">
+                        <a href="history.html">
+                            <h2 class="etteremNev">Lacrimi și Sfinți</h2>
+                            <p class="etteremLeiras">Hagyományos román ételek fenntartható, modern megközelítésben. Helyi alapanyagok és kreatív tálalás.</p>
+                            <p class="etteremHelyee">Bukarest <span id="etteremErtekeles"><i class="fas fa-star ertekeles-ikon"></i>4.6/5</span></p>
+                        </a>
+                    </div>
+                </div>
+
+
+
+
+            <div class="col-sm-2"></div>
+        </div>
+    </div>
+    <div id="footerIde"></div>
+    <script src="Assets/JS/scriptLoader.js"></script>
+</body>
+</html>

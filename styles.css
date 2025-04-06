@@ -1,0 +1,250 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #FFFFFF !important;
+    color: black !important;
+    overflow-x: hidden;
+}
+
+h1{
+    color: #E67E22;
+    font-size: 2.5em;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 1.5rem
+}
+
+#fooldalLink{
+    color: #E67E22;
+    font-weight: bold;;
+}
+#fooldalLink:hover{
+    color: black;
+    text-decoration: underline;
+}
+#footerIde{
+    color: #212121 !important;
+    font-weight: bold;
+    text-align: center;
+    background-color: #212121 !important;
+}
+
+#gombHelye {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  
+  .navigaciosGomb {
+    flex: 1 1 calc(25% - 20px);
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    min-width: 200px;
+    max-width: 280px;
+  }
+  
+  .navigaciosGomb a {
+    display: block;
+    text-decoration: none;
+    color: #3e2c14;
+    padding: 20px;
+  }
+  
+  .navigaciosGomb h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .navigaciosGomb p {
+    margin: 10px 0 0;
+    font-size: 14px;
+    color: black;
+  }
+  
+  .navigaciosGomb:hover {
+    background-color:rgb(211, 207, 208);
+    transform: translateY(-5px);
+  }
+  
+  .varos-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.varosismerteto {
+    flex: 1;
+    max-width: 50%;
+}
+
+.googleterkep {
+    flex: 1;
+    max-width: 50%; 
+    height: 450px;
+
+}
+
+iframe {
+    width: 100%;
+    height: 450px;
+    border: 0;
+}
+#tablazatLink{
+    color: #136a92;
+
+}
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#VarosLista ul {
+  list-style-type: none;
+  padding-left: 23px;
+}
+
+#VarosLista ul li {
+  background-image: url('Assets/img/icon/mappin.png');
+  background-size: 22px 22px; 
+  background-repeat: no-repeat;
+  padding-left: 30px; 
+}
+#listaLink{
+    color: rgb(49, 133, 32);
+    font-weight: bold;
+    text-decoration: underline;
+}
+.tobbreszlet {
+  background-color: transparent;
+  color: #333;
+  padding: 10px 20px;
+  border: 2px solid #333;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tobbreszlet:hover {
+  background-color: #333;
+  color: white;
+}
+
+#additional-info .detail {
+  margin-top: 20px;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#additional-info .detail h4 {
+  color: #007bff;
+  font-size: 20px;
+}
+
+#additional-info .detail p {
+  color: #555;
+}
+
+#varosnev{
+    font-size: 2em;
+    color: #800000;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 0,5rem;
+    font-family: 'Times New Roman', Times, serif
+
+}
+#load-more{
+  background-color: transparent;
+  color: #333;
+  padding: 10px 20px;
+  border: 2px solid #333;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.varosleiras{
+    color: black;
+    text-align: justify;
+    margin-top: 20px;
+    margin-bottom: 0,5rem;
+}
+.Fooldalleiras{
+    color: black;
+    text-align: justify;
+    margin-top: 20px;
+    margin-bottom: 0,5rem;
+}
+#headerIde {
+  color: #800000 !important;
+  text-align: center;
+  width: 100%;
+  height: 400px;
+  background-image: url('Assets/img/header/gfdfg.jpg');
+  background-color: #212121 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#headerIde::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0; 
+}
+
+.headerszoveg {
+  font-size: 5em;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-family: 'Times New Roman', Times, serif;
+  z-index: 1;
+}
+.headerszovegalatt{
+  color: white;
+}
+
+#navbarIde .navbar {
+  background-color: #7533FA !important;
+  color: white !important;
+}
+#footerLink{
+    color: black;
+    text-decoration: none;
+}
+#footerLink a:hover{
+    color: rgb(31, 93, 187)
+}
+#footerIde a{
+    color: black !important;
+    text-decoration: none;
+}
+
+
