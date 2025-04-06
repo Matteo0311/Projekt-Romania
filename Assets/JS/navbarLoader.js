@@ -73,3 +73,8 @@ let footerSz = `
 </footer>`;
 
 document.getElementById("footerIde").innerHTML = footerSz;
+
+// A title-höz hozzáírjuk az oldal nevét (HelloRomania.hu) pld: Főoldal - HelloRomania.hu
+let pageTitle = document.title;
+let siteName = "HelloRomania.hu";
+document.title = `${pageTitle} - ${siteName}`;
