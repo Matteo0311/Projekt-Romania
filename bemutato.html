@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projekt Romania</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff7eb3, #ff758c);
+            color: white;
+            text-align: center;
+            animation: backgroundAnimation 10s infinite alternate;
+        }
+
+        h1 {
+            font-size: 4rem;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin: 20px 0;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        .links {
+            display: flex;
+            gap: 20px;
+            animation: fadeIn 4s ease-in-out;
+        }
+
+        .links a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            border: 2px solid white;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .links a:hover {
+            background: white;
+            color: #ff758c;
+            transform: scale(1.1);
+        }
+
+        @keyframes backgroundAnimation {
+            0% {
+                background: linear-gradient(135deg, #ff7eb3, #ff758c);
+            }
+            100% {
+                background: linear-gradient(135deg, #758cff, #7eb3ff);
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @media (max-width: 768px) {
+            h1 {
+            font-size: 3rem;
+            }
+
+            p {
+            font-size: 1.2rem;
+            }
+
+            .links a {
+            font-size: 1rem;
+            padding: 8px 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+            font-size: 2rem;
+            }
+
+            p {
+            font-size: 1rem;
+            }
+
+            .links {
+            flex-direction: column;
+            gap: 10px;
+            }
+
+            .links a {
+            font-size: 0.9rem;
+            padding: 6px 12px;
+            }
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        p {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+        }
+
+        .links a {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Üdvözlünk Románia ismerető weboldalán!</h1>
+        <p>Fedezd fel a Romániát, annak tájait, nevezetességeit, gasztronómiája satöbbi egy turista szemszögéből az alábbi linkek segítségével:</p>
+        <div class="links">
+            <a href="index.html" target="_blank">Főoldal</a>
+            <a href="gasztronomia.html" target="_blank">Gasztronómia</a>
+            <a href="hiressegek.html" target="_blank">Hírességek</a>
+        </div>
+    </div>
+</body>
+</html>

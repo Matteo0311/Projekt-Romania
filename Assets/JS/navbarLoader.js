@@ -1,9 +1,9 @@
 let sz = `
-<nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark" >
+<nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark">
   <div class="container">
     <a class="navbar-brand" href="/index.html">Románia</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon">          <img src="/Assets/favicon/koralakuicon.png" alt="Kép" class="kép" id="kép1"></span>
+      <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -25,7 +25,7 @@ let sz = `
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/pages/bran-kastely.html">Bran kastély</a></li>
-            <li><a class="dropdown-item" href="/transzfogarasi.html">Transzfogarasi út</a></li>
+            <li><a class="dropdown-item" href="/pages/bekas-szoros.html">Békás-szoros</a></li>
             <li><a class="dropdown-item" href="/szent-anna.html">Szent Anna-tó</a></li>
           </ul>
         </li>
@@ -36,6 +36,7 @@ let sz = `
 
 document.getElementById("navbarIde").innerHTML = sz;
 
+
 // Aktív navigációs elem beállítása
 
 function setActiveNav() {
@@ -43,7 +44,7 @@ function setActiveNav() {
   let navLinks = document.querySelectorAll(".nav-link, .dropdown-item");
 
   navLinks.forEach(link => {
-    if (link.getAttribute("href") === "/" + currentPath) { // Javítva az összehasonlítás
+    if (link.getAttribute("href") === "/" + currentPath) {
       link.classList.add("active");
       link.setAttribute("aria-current", "page");
     } else {
@@ -51,8 +52,6 @@ function setActiveNav() {
     }
   });
 }
-
-setActiveNav();
 
 // Footer script
 
