@@ -36,7 +36,6 @@ let sz = `
 
 document.getElementById("navbarIde").innerHTML = sz;
 
-
 // Aktív navigációs elem beállítása
 
 function setActiveNav() {
@@ -52,6 +51,8 @@ function setActiveNav() {
     }
   });
 }
+
+setActiveNav();
 
 // Footer script
 
