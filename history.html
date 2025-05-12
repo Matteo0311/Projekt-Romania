@@ -3,52 +3,547 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Történelem</title>
+    <title>Románia Történelme</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <style>
-        h1, h2, h3 { color: black; }
-        strong { color: #E74C3C; }
-        .highlight { background-color: #e2b00a; padding: 2px 5px; }
+        body {
+            font-family: 'Lora', serif;
+            line-height: 1.7;
+            color: #333;
+            background-color: #fcfcfc;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: #232323;
+            margin-top: 1.8em;
+            margin-bottom: 0.7em;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            border-left: 4px solid #E74C3C;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            color: #444;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+        
+        strong {
+            color: #E74C3C;
+            font-weight: 600;
+        }
+        
+        /* Egységesített kiemelések */
+        .highlight, .magyar-kapcsolat {
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+        
+        .highlight {
+            background-color: #E74C3C;
+            color: white;
+        }
+        
+        .magyar-kapcsolat {
+            background-color: #3498DB;
+            color: white;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 100%;
+            margin: 40px auto;
+            padding: 20px 0;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: #E74C3C;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        
+        .container-timeline {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        
+        .container-timeline::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: white;
+            border: 4px solid #E74C3C;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid #f8f9fa;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent #f8f9fa;
+        }
+        
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid #f8f9fa;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent #f8f9fa transparent transparent;
+        }
+        
+        .right::after {
+            left: -10px;
+        }
+        
+        .content {
+            padding: 20px;
+            background-color: #f8f9fa;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .history-image {
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+        
+        .history-card {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            margin: 30px 0;
+            padding: 25px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+        
+        .history-card h3 {
+            margin-top: 0;
+            font-size: 1.4rem;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+        
+        .quote {
+            font-style: italic;
+            border-left: 4px solid #E74C3C;
+            padding-left: 20px;
+            margin: 20px 0;
+            color: #555;
+        }
+        
+        #headerAloldal {
+            background-color: #f5f5f5;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+        
+        /* Javított tartalomjegyzék stílusok */
+        .sidebar-container {
+            position: relative;
+        }
+        
+        .history-nav {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            position: sticky;
+            top: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+        }
+        
+        .history-nav h4 {
+            margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #E74C3C;
+            font-size: 1.3rem;
+        }
+        
+        .history-nav ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+        
+        .history-nav li {
+            padding: 5px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .history-nav li:last-child {
+            border-bottom: none;
+        }
+        
+        .history-nav a {
+            color: #444;
+            text-decoration: none;
+            display: block;
+            transition: all 0.3s;
+            padding: 5px 10px;
+            font-size: 0.95rem;
+        }
+        
+        .history-nav a:hover {
+            color: #E74C3C;
+            background-color: #f1f1f1;
+            border-radius: 4px;
+        }
+        
+        .fun-facts {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+            margin-top: 20px;
+        }
+        
+        .fun-facts h4 {
+            margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498DB;
+            font-size: 1.3rem;
+        }
+        
+        .fun-facts ul {
+            padding-left: 20px;
+        }
+        
+        .fun-facts li {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .container-timeline {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .container-timeline::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+            
+            .left::after, .right::after {
+                left: 22px;
+            }
+            
+            .right {
+                left: 0%;
+            }
+        }
     </style>
 </head>
 <body>
     <div id="navbarIde"></div>
-    <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8">
-            <h1>Románia történelme</h1>
-            <hr>
-            <h2>Ókor és a dákok</h2>
-            <p>A mai Románia területén az ókorban <strong>dákok</strong> éltek, akik a trák népek egyik ágát alkották. A legismertebb dák uralkodó <strong>Decebalus</strong> volt, aki a rómaiakkal vívott háborúkban szerzett hírnevet. A dákok fejlett társadalmi és katonai struktúrával rendelkeztek, erődítményeik, például Sarmizegetusa, jelentős stratégiai szereppel bírtak.</p>
-            
-            <h2>A római hódítás</h2>
-            <p>Traianus császár Kr. u. 101-106 között két hadjáratban meghódította Dáciát, amely Róma provincia lett. A római uralom jelentős kulturális és infrastrukturális fejlődést hozott, utakat, városokat és fürdőket építettek. A dákok és rómaiak keveredése révén kialakult a román nép etnikai alapja.</p>
-            
-            <h2>A népvándorlás és a középkor</h2>
-            <p>A rómaiak 271 körül kivonultak Dáciából, és a terület a népvándorlás különböző népeinek útvonalává vált. Gótok, hunok, gepidák, avarok és szlávok érkeztek és hagytak nyomot a régióban. A középkor során kialakultak a román fejedelemségek: <span class="highlight">Havasalföld</span>, <span class="highlight">Moldva</span> és <span class="highlight">Erdély</span>. Ezek a területek hosszú ideig különállóak maradtak, bár szoros kulturális és gazdasági kapcsolatban álltak egymással.</p>
-            
-            <h2>Az oszmán hódítás és a függetlenségi harcok</h2>
-            <p>A 15. századtól kezdve az oszmánok jelentős befolyást szereztek a román fejedelemségek felett, adót követeltek és politikailag is beavatkoztak. A legismertebb törökellenes vezérek <strong>Vlad Țepeș</strong> (Dracula) és <strong>Mihai Viteazul</strong> voltak. Mihai Viteazul rövid időre, 1600-ban egyesítette a három román fejedelemséget, de uralma nem volt hosszú életű.</p>
-            
-            <h2>Unió és modern Románia kialakulása</h2>
-            <p>1859-ben <strong>Alexandru Ioan Cuza</strong> vezetésével Havasalföld és Moldva egyesült, megalapozva a modern Romániát. 1877-ben, az orosz-török háború során Románia kikiáltotta függetlenségét, amelyet a Berlini Kongresszus 1878-ban hivatalosan is elismert.</p>
-            
-            <h2>Az első világháború és Nagy-Románia létrejötte</h2>
-            <p>Az első világháború után, 1918. december 1-jén Erdély egyesült Romániával, létrehozva <strong>Nagy-Romániát</strong>. Ez volt az ország történelmének legnagyobb területi kiterjedése, amelyet az 1920-as trianoni békeszerződés szentesített.</p>
-            
-            <h2>A második világháború és kommunizmus</h2>
-            <p>A második világháborúban Románia először a tengelyhatalmak oldalán harcolt, majd 1944-ben átállt a szövetségesekhez. A háború után a Szovjetunió befolyása alá került, és 1947-ben kikiáltották a <strong>Román Népköztársaságot</strong>. Az ország kommunista diktatúrává vált, amelyet 1965-től <strong>Nicolae Ceaușescu</strong> vezetett.</p>
-            
-            <h2>A kommunizmus bukása és a rendszerváltás</h2>
-            <p>1989-ben az ország forradalommal vetett véget Ceaușescu uralmának. A diktátort és feleségét kivégezték, és Románia demokratikus átalakuláson ment keresztül. Az 1990-es években gazdasági és politikai kihívásokkal nézett szembe, de fokozatosan elindult az euroatlanti integráció útján.</p>
-            
-            <h2>Modern Románia</h2>
-            <p>Románia 2004-ben csatlakozott a NATO-hoz, majd 2007-ben az <strong>Európai Unió</strong> tagjává vált. Az ország folyamatosan fejlődik, bár gazdasági és politikai kihívásokkal továbbra is szembesül.</p>
+    
+    <div id="headerAloldal">
+        <div class="container">
+            <h1>Románia Történelme</h1>
+            <p class="lead">A dákoktól az Európai Unióig - egy nemzet fejlődésének évezredes útja</p>
         </div>
-        <div class="col-sm-2"></div>
-      </div>
+    </div>
+    
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2 p-0">
+                <div class="history-nav">
+                    <h4>Tartalomjegyzék</h4>
+                    <ul>
+                        <li><a href="#dak">Ókor és a dákok</a></li>
+                        <li><a href="#roma">A római hódítás</a></li>
+                        <li><a href="#nepvandorlas">Népvándorlás és középkor</a></li>
+                        <li><a href="#oszman">Oszmán hódítás</a></li>
+                        <li><a href="#erdely-aranykor">Erdélyi fejedelemség aranykora</a></li>
+                        <li><a href="#unio">Unió és modern Románia</a></li>
+                        <li><a href="#vilaghaboru">Első világháború</a></li>
+                        <li><a href="#masodik-vilaghaboru">Második világháború</a></li>
+                        <li><a href="#bukasa">Kommunizmus bukása</a></li>
+                        <li><a href="#modern">Modern Románia</a></li>
+                        <li><a href="#roman-magyar">Román-Magyar kapcsolatok</a></li>
+                        <li><a href="#kulturalis-hatas">Kulturális kölcsönhatások</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-lg-8">
+                <div class="history-card">
+                    <h2 id="dak">Ókor és a dákok</h2>
+                    <p>A mai Románia területén az ókorban <strong>dákok</strong> éltek, akik a trák népek egyik ágát alkották. A legismertebb dák uralkodó <strong>Decebalus</strong> volt, aki a rómaiakkal vívott háborúkban szerzett hírnevet. A dákok fejlett társadalmi és katonai struktúrával rendelkeztek, erődítményeik, például Sarmizegetusa, jelentős stratégiai szereppel bírtak.</p>
+                    
+                    <p>A dákok kultúrája gazdag volt, amely fejlett fémművességet, vallási rituálékat és erős társadalmi hierarchiát foglalt magában. Fővárosukat, <strong>Sarmizegetusát</strong> ma UNESCO világörökségi helyszínként tartják számon, amely a Déli-Kárpátokban található.</p>
+                    
+                    <img src="assets/images/sarmizegetusa.jpg" alt="Sarmizegetusa romjai" class="history-image">
+                </div>
+                
+                <div class="history-card">
+                    <h2 id="roma">A római hódítás</h2>
+                    <p>Traianus császár Kr. u. 101-106 között két hadjáratban meghódította Dáciát, amely Róma provincia lett. A római uralom jelentős kulturális és infrastrukturális fejlődést hozott, utakat, városokat és fürdőket építettek. A dákok és rómaiak keveredése révén kialakult a román nép etnikai alapja.</p>
+                    
+                    <p>A római uralom mintegy 165 évig tartott, amely idő alatt jelentős városok épültek, mint <strong>Apulum</strong> (ma Alba Iulia), <strong>Napoca</strong> (ma Kolozsvár/Cluj-Napoca), és <strong>Ulpia Traiana</strong> (Sarmizegetusa helyén). A latin nyelv alapjait ebben az időszakban vetették meg a régióban, amely később a román nyelv kialakulásához vezetett.</p>
+                    
+                    <div class="quote">
+                        "A dákok leigázása után Traianus 50.000 családot telepített a provinciába különböző részeiről a birodalomnak, létrehozva egy új, romanizált népességet." - Eutropius római történetíró
+                    </div>
+                    
+                    <img src="assets/images/traian_column.jpg" alt="Traianus oszlop részlete" class="history-image">
+                </div>
+                
+                <div class="history-card">
+                    <h2 id="nepvandorlas">A népvándorlás és a középkor</h2>
+                    <p>A rómaiak 271 körül kivonultak Dáciából, és a terület a népvándorlás különböző népeinek útvonalává vált. Gótok, hunok, gepidák, avarok és szlávok érkeztek és hagytak nyomot a régióban. A középkor során kialakultak a román fejedelemségek: <span class="highlight">Havasalföld</span>, <span class="highlight">Moldva</span> és <span class="highlight">Erdély</span>. Ezek a területek hosszú ideig különállóak maradtak, bár szoros kulturális és gazdasági kapcsolatban álltak egymással.</p>
+                    
+                    <p>A népvándorlás korszakában a dáko-román lakosság főként a hegyvidéki területekre húzódott vissza. A 9-10. században kezdtek kialakulni az első államalakulatok. <span class="magyar-kapcsolat">Erdély területe a magyar honfoglalás után a Magyar Királyság részévé vált</span>, míg Havasalföld és Moldva önálló fejedelemségekként működött.</p>
+                    
+                    <p><span class="magyar-kapcsolat">Az erdélyi magyar-román együttélés évszázadai</span> során jelentős kulturális kölcsönhatás alakult ki a népek között. A magyar nemesség jelentős befolyással rendelkezett az erdélyi területeken, míg a román népesség főként jobbágyként élt, de saját kulturális és vallási hagyományait megőrizte.</p>
+                </div>
+                
+                <div class="history-card">
+                    <h2 id="oszman">Az oszmán hódítás és a függetlenségi harcok</h2>
+                    <p>A 15. századtól kezdve az oszmánok jelentős befolyást szereztek a román fejedelemségek felett, adót követeltek és politikailag is beavatkoztak. A legismertebb törökellenes vezérek <strong>Vlad Țepeș</strong> (Dracula) és <strong>Mihai Viteazul</strong> voltak. Mihai Viteazul rövid időre, 1600-ban egyesítette a három román fejedelemséget, de uralma nem volt hosszú életű.</p>
+                    
+                    <p><strong>Vlad Țepeș</strong>, más néven Drakula (1431-1476), Havasalföld fejedelme volt, aki brutális módszereiről vált hírhedtté. Bár ma vámpírmítoszok kapcsolódnak hozzá, valójában határozott uralkodó volt, aki sikeresen vette fel a harcot az Ottoman birodalommal szemben.</p>
+                    
+                    <p><strong>Mihai Viteazul</strong> (Vitéz Mihály) rövid ideig tartó, de jelentős egyesítése 1600-ban a román történelem egyik legfontosabb momentuma, amely a későbbi egyesítési törekvések szimbólumává vált.</p>
+                    
+                    <img src="assets/images/vlad_tepes.jpg" alt="Vlad Țepeș portréja" class="history-image">
+                </div>
+                
+                <div class="history-card">
+                    <h2 id="erdely-aranykor">Erdélyi fejedelemség aranykora</h2>
+                    <p><span class="magyar-kapcsolat">Az Erdélyi Fejedelemség a 16-17. században élte virágkorát, amikor jelentős magyar fejedelmek, mint Bethlen Gábor és I. Rákóczi György uralkodtak.</span> Ebben az időszakban Erdély a vallási tolerancia földje volt, ahol különböző felekezetek – katolikusok, reformátusok, evangélikusok és unitáriusok – élhettek békében. Az 1568-as tordai országgyűlés elsőként mondta ki Európában a vallásszabadságot.</p>
+                    
+                    <p>Az erdélyi román lakosság számára is fontos időszak volt ez, bár politikai jogaik korlátozottak voltak, kulturális fejlődésük megkezdődött. <span class="magyar-kapcsolat">A 17. században jelentek meg az első román nyelvű vallásos szövegek és fordítások Erdély területén, gyakran magyar nemesek támogatásával.</span></p>
+                </div>
+                
+                <div class="history-card">
+                    <h2 id="unio">Unió és modern Románia kialakulása</h2>
+                    <p>1859-ben <strong>Alexandru Ioan Cuza</strong> vezetésével Havasalföld és Moldva egyesült, megalapozva a modern Romániát. 1877-ben, az orosz-török háború során Románia kikiáltotta függetlenségét, amelyet a Berlini Kongresszus 1878-ban hivatalosan is elismert.</p>
+                    
+                    <p>Az egyesülés után az új román állam jelentős modernizálódási folyamaton ment keresztül. Alexandru Ioan Cuza alapvető reformokat vezetett be az oktatásban, földreformot hajtott végre, és 1864-ben elfogadtatta az első polgári törvénykönyvet. 1866-ban I. Károly lett Románia fejedelme, később királya, aki alatt az ország jelentős gazdasági és kulturális fejlődésen ment keresztül.</p>
+                    
+                    <img src="assets/images/cuza.jpg" alt="Alexandru Ioan Cuza" class="history-image">
+                </div>
+                
+                <div class="history-card">
+                    <h2 id="vilaghaboru">Az első világháború és Nagy-Románia létrejötte</h2>
+                    <p>Az első világháború után, 1918. december 1-jén Erdély egyesült Romániával, létrehozva <strong>Nagy-Romániát</strong>. Ez volt az ország történelmének legnagyobb területi kiterjedése, amelyet az 1920-as trianoni békeszerződés szentesített.</p>
+                    
+                    <p>Az első világháború kezdetén Románia semleges maradt, de 1916-ban az antant oldalán belépett a háborúba, remélve, hogy megszerezheti Erdélyt. Az 1918-as gyulafehérvári nagygyűlésen mondták ki Erdély Romániához való csatlakozását. <span class="magyar-kapcsolat">A trianoni békeszerződés eredményeként Magyarország elvesztette területének kétharmadát, és jelentős magyar kisebbség került Románia területére.</span></p>
+                    
+                    <p>A két világháború közötti időszakban Nagy-Románia jelentős kihívásokkal nézett szembe: integrálnia kellett a különböző kultúrájú és fejlettségű régiókat, kezelnie kellett a kisebbségek helyzetét, és szembe kellett néznie a világgazdasági válság következményeivel.</p>
+                    
+                    <div class="quote">
+                        "A gyulafehérvári nagygyűlés határozata kimondta minden nép egyenjogúságát, anyanyelvi oktatást, közigazgatási és igazságszolgáltatási önkormányzatot az együttlakó népek számára." - 1918. december 1-i határozat részlete
+                    </div>
+                </div>
+                
+                <div class="history-card">
+                    <h2 id="masodik-vilaghaboru">A második világháború és kommunizmus</h2>
+                    <p>A második világháborúban Románia először a tengelyhatalmak oldalán harcolt, majd 1944-ben átállt a szövetségesekhez. A háború után a Szovjetunió befolyása alá került, és 1947-ben kikiáltották a <strong>Román Népköztársaságot</strong>. Az ország kommunista diktatúrává vált, amelyet 1965-től <strong>Nicolae Ceaușescu</strong> vezetett.</p>
+                    
+                    <p>1940-ben a második bécsi döntés értelmében <span class="magyar-kapcsolat">Észak-Erdélyt visszacsatolták Magyarországhoz</span>, de a második világháború után ismét Romániához került. A kommunista rezsim alatt az ország erőltetett iparosításon ment keresztül, és a sztálini módszereket alkalmazva felszámolták a politikai ellenzéket.</p>
+                    
+                    <p>Ceaușescu uralma alatt Románia kezdetben bizonyos függetlenséget mutatott a Szovjetuniótól, ami nyugati népszerűséget hozott az országnak. Az 1970-es évektől kezdve azonban a rezsim egyre elnyomóbbá vált. Az erőltetett városiasítás és iparosítás, a külföldi adósság visszafizetésére tett intézkedések jelentős élelmiszer- és energiahiányhoz vezettek az 1980-as években.</p>
+                    
+                    <img src="assets/images/ceausescu.jpg" alt="Nicolae Ceaușescu" class="history-image">
+                </div>
+                
+                <div class="history-card">
+                    <h2 id="bukasa">A kommunizmus bukása és a rendszerváltás</h2>
+                    <p>1989-ben az ország forradalommal vetett véget Ceaușescu uralmának. A diktátort és feleségét kivégezték, és Románia demokratikus átalakuláson ment keresztül. Az 1990-es években gazdasági és politikai kihívásokkal nézett szembe, de fokozatosan elindult az euroatlanti integráció útján.</p>
+                    
+                    <p>A román forradalom 1989. december 16-án Temesváron kezdődött, egy magyar nemzetiségű református lelkész, <span class="magyar-kapcsolat">Tőkés László</span> kényszerű áthelyezése elleni tiltakozással. A megmozdulás gyorsan országos méretűvé vált, és december 22-ére már Bukarestben is hatalmas tömegek tüntettek.</p>
+                    
+                    <p>A rendszerváltás után létrejött a többpártrendszer, és megkezdődött a piacgazdaságra való átállás, bár ez jelentős nehézségekkel és társadalmi feszültségekkel járt. Az 1990-es marosvásárhelyi etnikai összecsapások jelezték, hogy a kisebbségi kérdés továbbra is érzékeny probléma maradt.</p>
+                    
+                    <div class="quote">
+                        "Románia forradalmának napjai voltak azok, amikor az emberek legyőzték a félelmet." - Jon Iliescu, Románia első szabadon választott elnöke
+                    </div>
+                </div>
+                
+                <div class="history-card">
+                    <h2 id="modern">Modern Románia</h2>
+                    <p>Románia 2004-ben csatlakozott a NATO-hoz, majd 2007-ben az <strong>Európai Unió</strong> tagjává vált. Az ország folyamatosan fejlődik, bár gazdasági és politikai kihívásokkal továbbra is szembesül.</p>
+                    
+                    <p>Az európai integráció jelentős változásokat hozott: az uniós források fejlesztési lehetőségeket teremtettek, de az országnak szembe kellett néznie a korrupció elleni küzdelem kihívásaival is. Az utóbbi években Románia gazdasági növekedést mutatott, különösen az IT szektor fejlődésével.</p>
+                    
+                    <p><span class="magyar-kapcsolat">A román-magyar kapcsolatok az EU-tagság következtében javultak, bár továbbra is vannak feszültségek, főleg a kisebbségi jogok területén.</span> Az erdélyi magyarság autonómiatörekvései és a nyelvi jogok kérdése időről időre diplomáciai vitákhoz vezet a két ország között.</p>
+                    
+                    <p>Ma Románia a térség egyik jelentős országa, amely gazdag kulturális örökségével, természeti szépségeivel és fejlődő gazdaságával fontos szerepet tölt be Kelet-Közép-Európában.</p>
+                    
+                    <img src="assets/images/modern_romania.jpg" alt="Modern Bukarest látképe" class="history-image">
+                </div>
+                
+                <h3 id="roman-magyar">Román-Magyar kapcsolatok az évszázadok során</h3>
+                
+                <div class="timeline">
+                    <div class="container-timeline left">
+                        <div class="content">
+                            <h4>10-11. század</h4>
+                            <p><span class="magyar-kapcsolat">A Magyar Királyság kiterjeszti fennhatóságát Erdély területére.</span> A román népesség főként a hegyvidéki területeken él, saját kenézeik vezetése alatt.</p>
+                        </div>
+                    </div>
+                    <div class="container-timeline right">
+                        <div class="content">
+                            <h4>13. század</h4>
+                            <p>II. András magyar király behívja a Német Lovagrendet a Barcaságba. <span class="magyar-kapcsolat">A magyar királyok szász telepeseket hívnak Erdélybe.</span></p>
+                        </div>
+                    </div>
+                    <div class="container-timeline left">
+                        <div class="content">
+                            <h4>14. század</h4>
+                            <p><span class="magyar-kapcsolat">Havasalföld és Moldva fejedelemségei elismerik a magyar király fennhatóságát,</span> de jelentős autonómiával rendelkeznek.</p>
+                        </div>
+                    </div>
+                    <div class="container-timeline right">
+                        <div class="content">
+                            <h4>15. század</h4>
+                            <p>Hunyadi János és Mátyás király idején erősödik a kulturális kapcsolat. <span class="magyar-kapcsolat">Hunyadi János romám származásúnak tartotta magát, mégis a magyar királyság egyik legjelentősebb alakja lett.</span></p>
+                        </div>
+                    </div>
+                    <div class="container-timeline left">
+                        <div class="content">
+                            <h4>16-17. század</h4>
+                            <p><span class="magyar-kapcsolat">Az Erdélyi Fejedelemség idején a románok helyzete javul, megjelennek az első román nyelvű könyvek.</span> Bethlen Gábor támogatja az ortodox egyházat.</p>
+                        </div>
+                    </div>
+                    <div class="container-timeline right">
+                        <div class="content">
+                            <h4>18. század</h4>
+                            <p><span class="magyar-kapcsolat">Az Erdélyi Iskola (Școala Ardeleană) mozgalmának kibontakozása, amely a románok latin eredetét hangsúlyozza.</span> Növekszik a román nemzeti öntudat.</p>
+                        </div>
+                    </div>
+                    <div class="container-timeline left">
+                        <div class="content">
+                            <h4>1848-1849</h4>
+                            <p><span class="magyar-kapcsolat">A magyar szabadságharc során etnikai konfliktusok robbannak ki magyar és román lakosság között.</span> A románok a Habsburg-házat támogatják.</p>
+                        </div>
+                    </div>
+                    <div class="container-timeline right">
+                        <div class="content">
+                            <h4>1918-1920</h4>
+                            <p>Erdély egyesül Romániával. <span class="magyar-kapcsolat">A trianoni békeszerződéssel mintegy 1,6 millió magyar kerül román fennhatóság alá.</span></p>
+                        </div>
+                    </div>
+                    <div class="container-timeline left">
+                        <div class="content">
+                            <h4>1940-1944</h4>
+                            <p><span class="magyar-kapcsolat">A második bécsi döntés értelmében Észak-Erdély visszakerül Magyarországhoz.</span> A háború után újra Románia része lesz.</p>
+                        </div>
+                    </div>
+                    <div class="container-timeline right">
+                        <div class="content">
+                            <h4>1945-1989</h4>
+                            <p>A kommunista korszakban <span class="magyar-kapcsolat">a magyar kisebbség előbb autonómiát kap (Magyar Autonóm Tartomány), majd fokozatosan csökkennek jogaik</span> Ceaușescu nacionalista politikája alatt.</p>
+                        </div>
+                    </div>
+                    <div class="container-timeline left">
+                        <div class="content">
+                            <h4>1989</h4>
+                            <p><span class="magyar-kapcsolat">A román forradalom Temesváron kezdődik, Tőkés László református lelkész körüli események kapcsán.</span></p>
+                        </div>
+                    </div>
+                    <div class="container-timeline right">
+                        <div class="content">
+                            <h4>2007-től</h4>
+                            <p><span class="magyar-kapcsolat">Mindkét ország EU-tag, javuló kapcsolatok, de időnként feszültségek a kisebbségi kérdésekben.</span> Gazdasági együttműködés erősödése.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="history-card">
+                    <h3 id="kulturalis-hatas">Kulturális kölcsönhatások</h3>
+                    <p><span class="magyar-kapcsolat">A román és magyar kultúra évszázadok óta kölcsönhatásban áll egymással.</span> Ez a kapcsolat megfigyelhető a nyelvben (kölcsönszavak), a népzenében, a gasztronómiában és a néphagyományokban egyaránt. Mindkét nép folklórjában megtalálhatók hasonló motívumok, különösen Erdély területén.</p>
+                    
+                    <p>A vallási különbségek (ortodox román és katolikus/protestáns magyar) ellenére számos közös egyházi ünnep és hagyomány alakult ki az együttélés során. <span class="magyar-kapcsolat">Az erdélyi magyar arisztokrácia és a román értelmiség között gyakran szoros kapcsolatok alakultak ki, különösen a 19. században, a nemzeti ébredés időszakában.</span></p>
+                </div>
+            </div>
+            
+            <div class="col-lg-2 sidebar-container">
+                <div class="fun-facts">
+                    <h4>Történelmi érdekességek</h4>
+                    <ul>
+                        <li>A román nyelv a latin nyelvek keleti ágához tartozik, szókincsének mintegy 70%-a latin eredetű.</li>
+                        <li>Románia első királya, I. Károly (Carol) a német Hohenzollern-Sigmaringen házból származott.</li>
+                        <li>Bukarestet gyakran "Kis Párizsnak" nevezték a két világháború között elegáns épületei miatt.</li>
+                        <li><span class="magyar-kapcsolat">A Dózsa György-féle 1514-es parasztfelkelésben mind magyar, mind román jobbágyok részt vettek.</span></li>
+                        <li>A világ első ipari olajfúrótornyát 1857-ben állították fel Romániában, Ploiești közelében.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="footerIde"></div>
     <script src="Assets/JS/scriptLoader.js"></script>
 </body>

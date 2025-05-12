@@ -1,0 +1,90 @@
+#BranHeader {
+    color: white !important;
+    text-align: center;
+    width: 100%;
+    height: 400px;
+    background-image: url('/Assets/img/header/gfdfg.jpg');
+    background-color: #212121 !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .cim {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: #3b2e2a;
+    border-left: 4px solid #8e2424;
+    padding-left: 1rem;
+    text-shadow: 1px 1px 0 #eee;
+  }
+  
+  /* Beágyazott alcímek kisebbek */
+  .cim + .cim {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    border-color: #b64545;
+  }
+  
+  /* Leírások – lágy, barátságos tipó, jó olvashatóság */
+  .leiras {
+    font-family: 'Merriweather', serif;
+    font-size: 1.05rem;
+    color: #444;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+  }
+  
+  /* Listák stílusa – turisztikai tippekre fókuszálva */
+  .leiras li {
+    margin-bottom: 0.75rem;
+    padding-left: 0.5rem;
+    position: relative;
+  }
+  
+  .leiras li::before {
+    content: "🧭";
+    position: absolute;
+    left: -1.2rem;
+    top: 0.1rem;
+  }
+  
+  /* Képek – kerekített és középre igazított, már jó Bootstrap class van, csak finomítunk */
+  .img-fluid {
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+  }
+  
+  .img-fluid:hover {
+    transform: scale(1.015);
+  }
+  
+  /* Mobilon is szuper: betűméretek finoman alkalmazkodnak */
+  @media (max-width: 768px) {
+    .cim {
+      font-size: 1.6rem;
+    }
+  
+    .leiras {
+      font-size: 1rem;
+    }
+  }
+  @media (max-width: 480px) {
+    .cim {
+      font-size: 1.2rem;
+      padding-left: 0.5rem;
+    }
+  
+    .leiras {
+      font-size: 0.9rem;
+    }
+  
+    .img-fluid {
+      box-shadow: none;
+    }
+  }

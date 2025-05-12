@@ -1,396 +1,555 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hírességek</title>
+    <title>Románia Hírességei</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-    .emberekBemutato {
-    display: flex;
-    margin-bottom: 20px; 
-    border: 1px solid #ccc; 
-    padding: 10px; 
-    border-radius: 8px;
-}
-
-.emberekDiv {
-    flex: 2;
-    padding-right: 15px;
-}
-
-.emberekNevei {
-    font-size: 1.3em;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #333;
-}
-
-.mettolmeddigeltek {
-    font-style: italic;
-    color: #777;
-    margin-bottom: 10px;
-}
-
-.emberekLeirasa {
-    font-size: 1em;
-    line-height: 1.6;
-    color: #555;
-}
-
-.emberekKep {
-    flex: 1; 
-    max-width: 200px; 
-    height: auto;
-    border-radius: 4px;
-    overflow: hidden;
-}
-
-.emberekKep img {
-    display: block; 
-    width: 100%; 
-    height: auto; 
-}
-#Tisztsege {
-    display: inline-block;
-    background-color: #f0f0f0;
-    color: #555;
-    border: 1px solid #ccc;
-    padding: 0.4em 0.8em;
-    border-radius: 3px;
-    font-size: 0.85em;
-    font-style: italic;
-    margin-bottom: 0.4em;
-}
-.ember-kontener {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.ember-kartya {
-    flex: 0 1 calc(25% - 20px);
-    margin-bottom: 20px;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    background-color: #f9f9f9;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    position: relative;
-    min-height: px;
-    display: flex;
-    flex-direction: column;
-}
-
-.ember-kartya:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.kartya-kep-resz {
-    overflow: hidden;
-    position: relative;
-    height: 450px; 
-}
-
-.kartya-kep-resz img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: opacity 0.3s ease-in-out;
-}
-
-.kartya-info-alap {
-    padding: 10px;
-    text-align: center;
-    border-bottom: 1px solid #eee;
-}
-
-.kartya-nev {
-    font-size: 1.1em;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #333;
-}
-
-.kartya-eletkor {
-    font-size: 0.9em;
-    color: #777;
-}
-
-.kartya-info-hover {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-}
-
-.ember-kartya:hover .kartya-info-hover {
-    opacity: 1;
-}
-
-.kartya-leiras {
-    font-size: 1em;
-    margin-bottom: 10px;
-}
-
-@media (max-width: 768px) {
-    .ember-kartya {
-        flex: 0 1 calc(50% - 20px);
+    body {
+        font-family: 'Lora', serif;
+        background-color: #f8f9fa;
+        color: #343a40;
+        line-height: 1.6;
     }
-}
-
-@media (max-width: 480px) {
-    .ember-kartya {
-        flex: 0 1 100%;
+    
+    h1, h2, h3, .emberekNevei {
+        font-family: 'Playfair Display', serif;
+        font-weight: 600;
     }
-}
+    
+    h1 {
+        color: #212529;
+        text-align: center;
+        margin: 30px 0;
+        font-size: 2.5rem;
+        position: relative;
+        padding-bottom: 15px;
+    }
+    
+    h1:after {
+        content: "";
+        position: absolute;
+        width: 100px;
+        height: 3px;
+        background-color: #E74C3C;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    hr {
+        margin: 40px 0;
+        opacity: 0.15;
+        border-color: #6c757d;
+    }
+    
+    /* Prominentek stílusa - kiemelkedő hírességek */
+    .prominent-section {
+        margin-bottom: 50px;
+    }
+    
+    .prominent-card {
+        display: flex;
+        background-color: #fff;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        margin-bottom: 30px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .prominent-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .prominent-card:nth-child(odd) {
+        flex-direction: row;
+    }
+    
+    .prominent-card:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+    
+    .prominent-info {
+        flex: 2;
+        padding: 25px;
+    }
+    
+    .prominent-image {
+        flex: 1;
+        min-width: 200px;
+        max-width: 300px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .prominent-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    
+    .prominent-card:hover .prominent-image img {
+        transform: scale(1.05);
+    }
+    
+    .prominent-name {
+        font-size: 1.8rem;
+        color: #343a40;
+        margin-bottom: 5px;
+        border-bottom: 2px solid #E74C3C;
+        display: inline-block;
+        padding-bottom: 5px;
+    }
+    
+    .prominent-title {
+        display: inline-block;
+        background-color: #E74C3C;
+        color: white;
+        border-radius: 20px;
+        padding: 3px 15px;
+        font-size: 0.9em;
+        font-style: normal;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    
+    .prominent-years {
+        font-style: italic;
+        color: #6c757d;
+        margin-bottom: 20px;
+        font-size: 1.1em;
+    }
+    
+    .prominent-description {
+        font-size: 1.05rem;
+        line-height: 1.8;
+        color: #495057;
+        text-align: justify;
+    }
+    
+    /* Említésre méltók stílusa */
+    .notable-section {
+        margin: 50px 0;
+    }
+    
+    .notable-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 25px;
+    }
+    
+    .notable-card {
+        background-color: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        height: 350px;
+        position: relative;
+    }
+    
+    .notable-card:hover {
+        transform: translateY(-7px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+    }
+    
+    .notable-image {
+        height: 250px;
+        overflow: hidden;
+    }
+    
+    .notable-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    
+    .notable-card:hover .notable-image img {
+        transform: scale(1.1);
+    }
+    
+    .notable-info {
+        padding: 15px;
+        text-align: center;
+    }
+    
+    .notable-name {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+        color: #343a40;
+    }
+    
+    .notable-years {
+        color: #6c757d;
+        font-style: italic;
+    }
+    
+    .notable-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(29, 29, 29, 0.9);
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    .notable-card:hover .notable-overlay {
+        opacity: 1;
+    }
+    
+    .notable-description {
+        text-align: center;
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
+    /* Reszponzív beállítások */
+    @media (max-width: 768px) {
+        .prominent-card, .prominent-card:nth-child(even) {
+            flex-direction: column;
+        }
+        
+        .prominent-image {
+            max-width: 100%;
+            height: 250px;
+        }
+        
+        .notable-grid {
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        }
+    }
 
+    /* Pageheader stílusa */
+    #headerAloldal {
+        background-color: #f5f5f5;
+        padding: 3rem 0;
+        margin-bottom: 2rem;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+        background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), 
+                          url('Assets/img/hiressegek/romania-map-bg.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .lead {
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: #6c757d;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    
+    /* Animációk */
+    .card-animate {
+        opacity: 0;
+        transform: translateY(20px);
+        animation-fill-mode: forwards;
+    }
+    
+    .fade-in {
+        animation: fadeInUp 0.8s ease forwards;
+    }
+    
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    /* Megjelenési késleltetés beállítása */
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    .delay-4 { animation-delay: 0.4s; }
+    .delay-5 { animation-delay: 0.5s; }
+    .delay-6 { animation-delay: 0.6s; }
+    .delay-7 { animation-delay: 0.7s; }
+    .delay-8 { animation-delay: 0.8s; }
+    .delay-9 { animation-delay: 0.9s; }
 </style>
+</head>
 <body>
     <div id="navbarIde"></div>
-    <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8">
-            <h1>Románia Híres Emberei</h1>
-            <hr>
-            <div class="emberekBemutato">
-                <div class="emberekDiv">
-                    <div class="emberekNevei">Nicolae Ceaușescu</div>
-                    <div id="Tisztsege">Politikus</div>
-                    <div class="mettolmeddigeltek">1918-1989</div>
-                    <div class="emberekLeirasa">Nicolae Ceaușescu Románia kommunista diktátora volt 1965-től 1989-ig, egyre inkább személyi kultuszra építve uralmát. Keményvonalas politikája elszigetelte Romániát a többi kelet-európai országtól, miközben nagyszabású, de sokszor pazarló projekteket erőltetett. A lakosság életszínvonala jelentősen romlott uralma alatt, ami végül az 1989-es véres forradalomhoz és kivégzéséhez vezetett feleségével, Elenával együtt. Az öröksége máig vitatott Romániában, sokan a gazdasági hanyatlás és az elnyomás szimbólumaként tekintenek rá.</div>
-
-
-                </div>
-                <div class="emberekKep">
-                    <img src="/Assets/img/hiressegek/Nicolae_Ceaușescu.jpg" alt="">
-                </div>
-
-            </div>
-            <div class="emberekBemutato">
-
-                <div class="emberekKep">
-                    <img src="/Assets/img/hiressegek/Eminescu.jpg" alt="">
-                </div>
-                <div class="emberekDiv">
-                    <div class="emberekNevei">Mihai Eminescu</div>
-                    <div id="Tisztsege">Költő</div>
-                    <div class="mettolmeddigeltek">1850-1889</div>
-                    <div class="emberekLeirasa">Mihai Eminescu a 19. század egyik legjelentősebb román költője volt, akinek versei mélyen áthatották a román irodalmat és kultúrát. Gyakran a román irodalom legnagyobb alakjaként tartják számon, romantikus stílusa és filozófiai mélysége maradandó hatást gyakorolt. Műveiben a természet, a szerelem, a történelem és a metafizikai kérdések egyaránt központi szerepet játszanak, gyönyörű és melankolikus hangvételben. Bár élete tragikusan korán véget ért, költészete mindmáig inspirálja és megérinti az olvasókat.</div>
-                </div>
-            </div>
-            <div class="emberekBemutato">
-                <div class="emberekDiv">
-                    <div class="emberekNevei">George Enescu</div>
-                    <div id="Tisztsege">Zeneszerző</div>
-                    <div class="mettolmeddigeltek">1881-1955</div>
-                    <div class="emberekLeirasa">George Enescu a 20. század egyik legnagyobb román zeneszerzője és hegedűművésze volt, akinek munkássága jelentős hatással volt a román és nemzetközi zenei életre. Művei ötvözik a román népzene elemeit a klasszikus zene hagyományaival, így teremtve meg egyedi stílusát. Legismertebb művei közé tartozik a "Román Rapszódia" és a "Hegedűverseny". Enescu nemcsak zeneszerzőként, hanem hegedűművészként is világszerte elismert volt, és számos neves zenekar és zenész játszotta műveit.</div>
-                </div>
-                <div class="emberekKep">
-                    <img src="/Assets/img/hiressegek/enescu.jpg" alt="">
-                </div>
-            </div>
-            <div class="emberekBemutato">
-                <div class="emberekDiv">
-                    <div class="emberekNevei">Angela Gheorghiu</div>
-                    <div id="Tisztsege">Operaénekes</div>
-                    <div class="mettolmeddigeltek">1965-</div>
-                    <div class="emberekLeirasa">Angela Gheorghiu világhírű román operaénekes, aki a klasszikus zene világában kiemelkedő teljesítményével vált ismertté. Szoprán hangja és színpadi jelenléte lenyűgöző, számos neves operaházban és koncertteremben lépett fel világszerte. Művészete ötvözi a hagyományos operai előadásmódot a modern interpretációkkal, így teremtve meg egyedi stílusát. Gheorghiu nemcsak a klasszikus operákban, hanem kortárs művekben is szerepel, és számos díjat nyert pályafutása során.</div>
-                </div>
-                <div class="emberekKep">
-                    <img src="/Assets/img/hiressegek/Angela-Gheorghiu-BW-07r-copy.jpg" alt="">
-                </div>
-            </div>
-            <div class="emberekBemutato">
-                <div class="emberekDiv">
-                    <div class="emberekNevei">Simona Halep</div>
-                    <div id="Tisztsege">Teniszező</div>
-                    <div class="mettolmeddigeltek">1991-</div>
-                    <div class="emberekLeirasa">Simona Halep a román tenisz egyik legismertebb alakja, aki számos Grand Slam tornát nyert pályafutása során. Kiemelkedő teljesítményével és technikai tudásával világszerte elismerést szerzett. Halep nemcsak a pályán, hanem azon kívül is aktívan részt vesz jótékonysági tevékenységekben, és a fiatal teniszezők mentorálására is nagy hangsúlyt fektet.</div>
-                </div>
-                <div class="emberekKep">
-                    <img src="/Assets/img/hiressegek/nn_simona_halep_wimbledon49fg.jpg" alt="">
-                </div>
-            </div>
-            <div class="emberekBemutato">
-                <div class="emberekDiv">
-                    <div class="emberekNevei">Gheorghe Hagi</div>
-                    <div id="Tisztsege">Labdarúgó</div>
-                    <div class="mettolmeddigeltek">1965-</div>
-                    <div class="emberekLeirasa">Gheorghe Hagi a román labdarúgás egyik legnagyobb alakja, aki pályafutása során számos nemzetközi klubban játszott, köztük a Real Madridban és a Barcelonában. Kiemelkedő technikai tudása és kreativitása miatt "Maradonának" is nevezik. Hagi a román válogatottban is jelentős szerepet játszott, és a 1994-es világbajnokságon kiemelkedő teljesítményt nyújtott.</div>
-                </div>
-                <div class="emberekKep">
-                    <img src="/Assets/img/hiressegek/Lansarea_candidaturii_Gabrielei_Szabo_pentru_Camera_Deputatilor,_Voluntari_-_04.05_(48)_(14270956179)_(cropped).jpg" alt="">
-                </div>
-            </div>
-            <div class="emberekBemutato">
-                <div class="emberekDiv">
-                    <div class="emberekNevei">Elie Wiesel</div>
-                    <div id="Tisztsege">Író</div>
-                    <div class="mettolmeddigeltek">1928-2016</div>
-                    <div class="emberekLeirasa">Elie Wiesel román származású író és holokauszt-túlélő, aki Nobel-békedíjat nyert. Műveiben a holokauszt borzalmait és az emberi jogok védelmét hangsúlyozta. Wiesel a zsidó közösség jogaiért és a világ békéjéért folytatott harcával vált ismertté, és számos könyvet írt tapasztalatairól.</div>
-                </div>
-                <div class="emberekKep">
-                    <img src="/Assets/img/hiressegek/ELIE_WIESEL_(5112581267).jpg" alt="">
-                </div>
-            </div>
-            <div class="emberekBemutato">
-                <div class="emberekDiv">
-                    <div class="emberekNevei">Ion Luca Caragiale</div>
-                    <div id="Tisztsege">Író</div>
-                    <div class="mettolmeddigeltek">1852-1912</div>
-                    <div class="emberekLeirasa">Ion Luca Caragiale a román drámaírás egyik legnagyobb alakja, akinek művei a román színház alapköveit képezik. Drámái és komédiái éles társadalmi kritikát fogalmaznak meg, és a román nyelv szépségét és gazdagságát tükrözik. Caragiale munkássága máig hatással van a román irodalomra és színházra.</div>
-                </div>
-                <div class="emberekKep">
-                    <img src="/Assets/img/hiressegek/Ion_Luca_Caragiale_-_Foto03.jpg" alt="">
-                </div>
-            </div>
-            <div class="emberekBemutato">
-                <div class="emberekDiv">
-                    <div class="emberekNevei">Emil Cioran</div>
-                    <div id="Tisztsege">Filozófus</div>
-                    <div class="mettolmeddigeltek">1911-1995</div>
-                    <div class="emberekLeirasa">Emil Cioran román filozófus és író, aki a nihilizmus és a pesszimizmus témáiban írt műveiről ismert. Munkái mély filozófiai kérdéseket vetnek fel az életről, halálról és az emberi létezés értelméről. Cioran stílusa provokatív és elgondolkodtató, sokak számára inspiráló és megdöbbentő.</div>
-                </div>
-                <div class="emberekKep">
-                    <img src="/Assets/img/hiressegek/Emil-cioran-3.webp" alt="">
-                </div>
-            </div>
-            <hr>
-            <h1>Említésre méltó emberek</h1>
-
-            <p></p>
-            <div class="ember-kontener">
-                <div class="ember-kartya">
-                    <div class="kartya-kep-resz">
-                        <img src="/Assets/img/hiressegek/Nicolae_Iorga.jpg" alt="Nicolae Iorga">
-                    </div>
-                    <div class="kartya-info-alap">
-                        <div class="kartya-nev">Nicolae Iorga</div>
-                        <div class="kartya-eletkor">1871-1940</div>
-                    </div>
-                    <div class="kartya-info-hover">
-                        <div class="kartya-leiras">Filozófus, történész és politikus. Magyar felmenőkkel rendelkezik, és Románia egyik legismertebb tudósaként vált híressé.</div>
-                    </div>
-                </div>
-            
-                <div class="ember-kartya">
-                    <div class="kartya-kep-resz">
-                        <img src="/Assets/img/hiressegek/Grigore_Alexandrescu.jpg" alt="Grigore Alexandrescu">
-                    </div>
-                    <div class="kartya-info-alap">
-                        <div class="kartya-nev">Grigore Alexandrescu</div>
-                        <div class="kartya-eletkor">1810-1885</div>
-                    </div>
-                    <div class="kartya-info-hover">
-                        <div class="kartya-leiras">Román költő és politikus, aki a 19. században jelentős hatást gyakorolt a román irodalomra. Apai ágon magyar felmenői voltak.</div>
-                    </div>
-                </div>
-            
-                <div class="ember-kartya">
-                    <div class="kartya-kep-resz">
-                        <img src="/Assets/img/hiressegek/ion--iriac.webp" alt="Ion Țiriac">
-                    </div>
-                    <div class="kartya-info-alap">
-                        <div class="kartya-nev">Ion Țiriac</div>
-                        <div class="kartya-eletkor">1939-</div>
-                    </div>
-                    <div class="kartya-info-hover">
-                        <div class="kartya-leiras">Román üzletember és egykori teniszező. Magyar felmenőkkel rendelkezik, és a sport világában is komoly elismerést szerzett.</div>
-                    </div>
-                </div>
-            
-                <div class="ember-kartya">
-                    <div class="kartya-kep-resz">
-                        <img src="/Assets/img/hiressegek/FP-e1602010448156.png" alt="Florin Pintescu">
-                    </div>
-                    <div class="kartya-info-alap">
-                        <div class="kartya-nev">Florin Pintescu</div>
-                        <div class="kartya-eletkor">1982-</div>
-                    </div>
-                    <div class="kartya-info-hover">
-                        <div class="kartya-leiras">Román színész, aki magyar gyökerekkel rendelkezik. Filmes pályafutása során számos nemzetközi produkcióban szerepelt.</div>
-                    </div>
-                </div>
-            
-                <div class="ember-kartya">
-                    <div class="kartya-kep-resz">
-                        <img src="/Assets/img/hiressegek/Mihai_Sadoveanu.jpg" alt="Mihai Sadoveanu">
-                    </div>
-                    <div class="kartya-info-alap">
-                        <div class="kartya-nev">Mihai Sadoveanu</div>
-                        <div class="kartya-eletkor">1905-1989</div>
-                    </div>
-                    <div class="kartya-info-hover">
-                        <div class="kartya-leiras">Román író és publicista, magyar származású felmenőkkel. Fontos szerepet játszott a román irodalom fejlődésében.</div>
-                    </div>
-                </div>
-            
-                <div class="ember-kartya">
-                    <div class="kartya-kep-resz">
-                        <img src="/Assets/img/hiressegek/Valeriu_Gheorghiu.jpg" alt="Valeriu Gheorghiu">
-                    </div>
-                    <div class="kartya-info-alap">
-                        <div class="kartya-nev">Valeriu Gheorghiu</div>
-                        <div class="kartya-eletkor">1939-</div>
-                    </div>
-                    <div class="kartya-info-hover">
-                        <div class="kartya-leiras">Román író és filozófus, aki magyar felmenőkkel bír, és művei a vallás, a történelem és az emberi sors kérdéseit feszegetik.</div>
-                    </div>
-                </div>
-            
-                <div class="ember-kartya">
-                    <div class="kartya-kep-resz">
-                        <img src="/Assets/img/hiressegek/David_Brânzan.jpg" alt="David Brânzan">
-                    </div>
-                    <div class="kartya-info-alap">
-                        <div class="kartya-nev">David Brânzan</div>
-                        <div class="kartya-eletkor">1990-</div>
-                    </div>
-                    <div class="kartya-info-hover">
-                        <div class="kartya-leiras">Román hegedűművész, aki magyar származású felmenőkkel rendelkezik, és a nemzetközi zenei életben is kiemelkedő teljesítményt nyújtott.</div>
-                    </div>
-                </div>
-                <div class="ember-kartya">
-                    <div class="kartya-kep-resz">
-                        <img src="/Assets/img/hiressegek/Vlad_Țepeș.jpg" alt="Vlad Țepeș">
-                    </div>
-                    <div class="kartya-info-alap">
-                        <div class="kartya-nev">Vlad Țepeș</div>
-                        <div class="kartya-eletkor">1431-1476</div>
-                    </div>
-                    <div class="kartya-info-hover">
-                        <div class="kartya-leiras">Román fejedelem, aki a híres "Dracula" történetének alapját adta. Magyar felmenőkkel rendelkezett, és híres volt kegyetlen uralkodásáról.</div>
-                    </div>
-                </div>
-            </div>
-
-                        
-        <div class="col-sm-2"></div>
+    
+    <div id="headerAloldal">
+        <div class="container">
+            <h1>Románia Hírességei</h1>
+            <p class="lead">Ismerd meg a román történelem, kultúra és közélet kiemelkedő alakjait, akik maradandó nyomot hagytak Románia és a világ történelmében</p>
+        </div>
     </div>
 
+    <div class="container">
+        <div class="prominent-section">
+            <div class="prominent-card card-animate fade-in delay-1">
+                <div class="prominent-info">
+                    <h2 class="prominent-name">Nicolae Ceaușescu</h2>
+                    <span class="prominent-title">Politikus</span>
+                    <div class="prominent-years">1918-1989</div>
+                    <p class="prominent-description">Nicolae Ceaușescu Románia kommunista diktátora volt 1965-től 1989-ig, egyre inkább személyi kultuszra építve uralmát. Keményvonalas politikája elszigetelte Romániát a többi kelet-európai országtól, miközben nagyszabású, de sokszor pazarló projekteket erőltetett. A lakosság életszínvonala jelentősen romlott uralma alatt, ami végül az 1989-es véres forradalomhoz és kivégzéséhez vezetett feleségével, Elenával együtt. Az öröksége máig vitatott Romániában, sokan a gazdasági hanyatlás és az elnyomás szimbólumaként tekintenek rá.</p>
+                </div>
+                <div class="prominent-image">
+                    <img src="Assets/img/hiressegek/Nicolae_Ceaușescu.jpg" alt="Nicolae Ceaușescu">
+                </div>
+            </div>
 
+            <div class="prominent-card card-animate fade-in delay-2">
+                <div class="prominent-info">
+                    <h2 class="prominent-name">Mihai Eminescu</h2>
+                    <span class="prominent-title">Költő</span>
+                    <div class="prominent-years">1850-1889</div>
+                    <p class="prominent-description">Mihai Eminescu a 19. század egyik legjelentősebb román költője volt, akinek versei mélyen áthatották a román irodalmat és kultúrát. Gyakran a román irodalom legnagyobb alakjaként tartják számon, romantikus stílusa és filozófiai mélysége maradandó hatást gyakorolt. Műveiben a természet, a szerelem, a történelem és a metafizikai kérdések egyaránt központi szerepet játszanak, gyönyörű és melankolikus hangvételben. Bár élete tragikusan korán véget ért, költészete mindmáig inspirálja és megérinti az olvasókat.</p>
+                </div>
+                <div class="prominent-image">
+                    <img src="Assets/img/hiressegek/Eminescu.jpg" alt="Mihai Eminescu">
+                </div>
+            </div>
 
+            <div class="prominent-card card-animate fade-in delay-3">
+                <div class="prominent-info">
+                    <h2 class="prominent-name">George Enescu</h2>
+                    <span class="prominent-title">Zeneszerző</span>
+                    <div class="prominent-years">1881-1955</div>
+                    <p class="prominent-description">George Enescu a 20. század egyik legnagyobb román zeneszerzője és hegedűművésze volt, akinek munkássága jelentős hatással volt a román és nemzetközi zenei életre. Művei ötvözik a román népzene elemeit a klasszikus zene hagyományaival, így teremtve meg egyedi stílusát. Legismertebb művei közé tartozik a "Román Rapszódia" és a "Hegedűverseny". Enescu nemcsak zeneszerzőként, hanem hegedűművészként is világszerte elismert volt, és számos neves zenekar és zenész játszotta műveit.</p>
+                </div>
+                <div class="prominent-image">
+                    <img src="Assets/img/hiressegek/enescu.jpg" alt="George Enescu">
+                </div>
+            </div>
+
+            <div class="prominent-card card-animate fade-in delay-4">
+                <div class="prominent-info">
+                    <h2 class="prominent-name">Angela Gheorghiu</h2>
+                    <span class="prominent-title">Operaénekes</span>
+                    <div class="prominent-years">1965-</div>
+                    <p class="prominent-description">Angela Gheorghiu világhírű román operaénekes, aki a klasszikus zene világában kiemelkedő teljesítményével vált ismertté. Szoprán hangja és színpadi jelenléte lenyűgöző, számos neves operaházban és koncertteremben lépett fel világszerte. Művészete ötvözi a hagyományos operai előadásmódot a modern interpretációkkal, így teremtve meg egyedi stílusát. Gheorghiu nemcsak a klasszikus operákban, hanem kortárs művekben is szerepel, és számos díjat nyert pályafutása során.</p>
+                </div>
+                <div class="prominent-image">
+                    <img src="Assets/img/hiressegek/Angela-Gheorghiu-BW-07r-copy.jpg" alt="Angela Gheorghiu">
+                </div>
+            </div>
+
+            <div class="prominent-card card-animate fade-in delay-5">
+                <div class="prominent-info">
+                    <h2 class="prominent-name">Simona Halep</h2>
+                    <span class="prominent-title">Teniszező</span>
+                    <div class="prominent-years">1991-</div>
+                    <p class="prominent-description">Simona Halep a román tenisz egyik legismertebb alakja, aki számos Grand Slam tornát nyert pályafutása során. Kiemelkedő teljesítményével és technikai tudásával világszerte elismerést szerzett. Halep nemcsak a pályán, hanem azon kívül is aktívan részt vesz jótékonysági tevékenységekben, és a fiatal teniszezők mentorálására is nagy hangsúlyt fektet.</p>
+                </div>
+                <div class="prominent-image">
+                    <img src="Assets/img/hiressegek/nn_simona_halep_wimbledon49fg.jpg" alt="Simona Halep">
+                </div>
+            </div>
+
+            <div class="prominent-card card-animate fade-in delay-6">
+                <div class="prominent-info">
+                    <h2 class="prominent-name">Gheorghe Hagi</h2>
+                    <span class="prominent-title">Labdarúgó</span>
+                    <div class="prominent-years">1965-</div>
+                    <p class="prominent-description">Gheorghe Hagi a román labdarúgás egyik legnagyobb alakja, aki pályafutása során számos nemzetközi klubban játszott, köztük a Real Madridban és a Barcelonában. Kiemelkedő technikai tudása és kreativitása miatt "Maradonának" is nevezik. Hagi a román válogatottban is jelentős szerepet játszott, és a 1994-es világbajnokságon kiemelkedő teljesítményt nyújtott.</p>
+                </div>
+                <div class="prominent-image">
+                    <img src="Assets/img/hiressegek/Lansarea_candidaturii_Gabrielei_Szabo_pentru_Camera_Deputatilor,_Voluntari_-_04.05_(48)_(14270956179)_(cropped).jpg" alt="Gheorghe Hagi">
+                </div>
+            </div>
+
+            <div class="prominent-card card-animate fade-in delay-7">
+                <div class="prominent-info">
+                    <h2 class="prominent-name">Elie Wiesel</h2>
+                    <span class="prominent-title">Író</span>
+                    <div class="prominent-years">1928-2016</div>
+                    <p class="prominent-description">Elie Wiesel román származású író és holokauszt-túlélő, aki Nobel-békedíjat nyert. Műveiben a holokauszt borzalmait és az emberi jogok védelmét hangsúlyozta. Wiesel a zsidó közösség jogaiért és a világ békéjéért folytatott harcával vált ismertté, és számos könyvet írt tapasztalatairól.</p>
+                </div>
+                <div class="prominent-image">
+                    <img src="Assets/img/hiressegek/ELIE_WIESEL_(5112581267).jpg" alt="Elie Wiesel">
+                </div>
+            </div>
+
+            <div class="prominent-card card-animate fade-in delay-8">
+                <div class="prominent-info">
+                    <h2 class="prominent-name">Ion Luca Caragiale</h2>
+                    <span class="prominent-title">Író</span>
+                    <div class="prominent-years">1852-1912</div>
+                    <p class="prominent-description">Ion Luca Caragiale a román drámaírás egyik legnagyobb alakja, akinek művei a román színház alapköveit képezik. Drámái és komédiái éles társadalmi kritikát fogalmaznak meg, és a román nyelv szépségét és gazdagságát tükrözik. Caragiale munkássága máig hatással van a román irodalomra és színházra.</p>
+                </div>
+                <div class="prominent-image">
+                    <img src="Assets/img/hiressegek/Ion_Luca_Caragiale_-_Foto03.jpg" alt="Ion Luca Caragiale">
+                </div>
+            </div>
+
+            <div class="prominent-card card-animate fade-in delay-9">
+                <div class="prominent-info">
+                    <h2 class="prominent-name">Emil Cioran</h2>
+                    <span class="prominent-title">Filozófus</span>
+                    <div class="prominent-years">1911-1995</div>
+                    <p class="prominent-description">Emil Cioran román filozófus és író, aki a nihilizmus és a pesszimizmus témáiban írt műveiről ismert. Munkái mély filozófiai kérdéseket vetnek fel az életről, halálról és az emberi létezés értelméről. Cioran stílusa provokatív és elgondolkodtató, sokak számára inspiráló és megdöbbentő.</p>
+                </div>
+                <div class="prominent-image">
+                    <img src="Assets/img/hiressegek/Emil-cioran-3.webp" alt="Emil Cioran">
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="notable-section">
+            <h1>Említésre Méltó Személyek</h1>
+            <p class="lead text-center mb-5">Románia további jelentős személyiségei, akik hozzájárultak az ország kulturális és tudományos örökségéhez</p>
+            
+            <div class="notable-grid">
+                <div class="notable-card card-animate fade-in delay-1">
+                    <div class="notable-image">
+                        <img src="Assets/img/hiressegek/Nicolae_Iorga.jpg" alt="Nicolae Iorga">
+                    </div>
+                    <div class="notable-info">
+                        <div class="notable-name">Nicolae Iorga</div>
+                        <div class="notable-years">1871-1940</div>
+                    </div>
+                    <div class="notable-overlay">
+                        <p class="notable-description">Filozófus, történész és politikus. Magyar felmenőkkel rendelkezik, és Románia egyik legismertebb tudósaként vált híressé.</p>
+                    </div>
+                </div>
+                
+                <div class="notable-card card-animate fade-in delay-2">
+                    <div class="notable-image">
+                        <img src="Assets/img/hiressegek/Grigore_Alexandrescu.jpg" alt="Grigore Alexandrescu">
+                    </div>
+                    <div class="notable-info">
+                        <div class="notable-name">Grigore Alexandrescu</div>
+                        <div class="notable-years">1810-1885</div>
+                    </div>
+                    <div class="notable-overlay">
+                        <p class="notable-description">Román költő és politikus, aki a 19. században jelentős hatást gyakorolt a román irodalomra. Apai ágon magyar felmenői voltak.</p>
+                    </div>
+                </div>
+                
+                <div class="notable-card card-animate fade-in delay-3">
+                    <div class="notable-image">
+                        <img src="Assets/img/hiressegek/ion--iriac.webp" alt="Ion Țiriac">
+                    </div>
+                    <div class="notable-info">
+                        <div class="notable-name">Ion Țiriac</div>
+                        <div class="notable-years">1939-</div>
+                    </div>
+                    <div class="notable-overlay">
+                        <p class="notable-description">Román üzletember és egykori teniszező. Magyar felmenőkkel rendelkezik, és a sport világában is komoly elismerést szerzett.</p>
+                    </div>
+                </div>
+                
+                <div class="notable-card card-animate fade-in delay-4">
+                    <div class="notable-image">
+                        <img src="Assets/img/hiressegek/FP-e1602010448156.png" alt="Florin Pintescu">
+                    </div>
+                    <div class="notable-info">
+                        <div class="notable-name">Florin Pintescu</div>
+                        <div class="notable-years">1982-</div>
+                    </div>
+                    <div class="notable-overlay">
+                        <p class="notable-description">Román színész, aki magyar gyökerekkel rendelkezik. Filmes pályafutása során számos nemzetközi produkcióban szerepelt.</p>
+                    </div>
+                </div>
+                
+                <div class="notable-card card-animate fade-in delay-5">
+                    <div class="notable-image">
+                        <img src="Assets/img/hiressegek/Mihai_Sadoveanu.jpg" alt="Mihai Sadoveanu">
+                    </div>
+                    <div class="notable-info">
+                        <div class="notable-name">Mihai Sadoveanu</div>
+                        <div class="notable-years">1905-1989</div>
+                    </div>
+                    <div class="notable-overlay">
+                        <p class="notable-description">Román író és publicista, magyar származású felmenőkkel. Fontos szerepet játszott a román irodalom fejlődésében.</p>
+                    </div>
+                </div>
+                
+                <div class="notable-card card-animate fade-in delay-6">
+                    <div class="notable-image">
+                        <img src="Assets/img/hiressegek/Valeriu_Gheorghiu.jpg" alt="Valeriu Gheorghiu">
+                    </div>
+                    <div class="notable-info">
+                        <div class="notable-name">Valeriu Gheorghiu</div>
+                        <div class="notable-years">1939-</div>
+                    </div>
+                    <div class="notable-overlay">
+                        <p class="notable-description">Román író és filozófus, aki magyar felmenőkkel bír, és művei a vallás, a történelem és az emberi sors kérdéseit feszegetik.</p>
+                    </div>
+                </div>
+                
+                <div class="notable-card card-animate fade-in delay-7">
+                    <div class="notable-image">
+                        <img src="Assets/img/hiressegek/David_Brânzan.jpg" alt="David Brânzan">
+                    </div>
+                    <div class="notable-info">
+                        <div class="notable-name">David Brânzan</div>
+                        <div class="notable-years">1990-</div>
+                    </div>
+                    <div class="notable-overlay">
+                        <p class="notable-description">Román hegedűművész, aki magyar származású felmenőkkel rendelkezik, és a nemzetközi zenei életben is kiemelkedő teljesítményt nyújtott.</p>
+                    </div>
+                </div>
+                
+                <div class="notable-card card-animate fade-in delay-8">
+                    <div class="notable-image">
+                        <img src="Assets/img/hiressegek/Vlad_Țepeș.jpg" alt="Vlad Țepeș">
+                    </div>
+                    <div class="notable-info">
+                        <div class="notable-name">Vlad Țepeș</div>
+                        <div class="notable-years">1431-1476</div>
+                    </div>
+                    <div class="notable-overlay">
+                        <p class="notable-description">Román fejedelem, aki a híres "Dracula" történetének alapját adta. Magyar felmenőkkel rendelkezett, és híres volt kegyetlen uralkodásáról.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div id="footerIde"></div>
-    <script src="/Assets/JS/scriptLoader.js"></script>
+    <script src="Assets/JS/scriptLoader.js"></script>
+    
+    <script>
+        // Scroll alapú animáció
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('.card-animate').forEach(item => {
+                observer.observe(item);
+            });
+        });
+    </script>
 </body>
 </html>
